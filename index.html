@@ -23,7 +23,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!-- stylesheet include -->
-	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+	<link rel="stylesheet" href="assets/css/style.css">
 
 	<title>Basic Weather</title>
 
@@ -31,7 +31,7 @@
 
 <body>
 	<div class="container">
-		<h1>zip Search</h1>
+		<h1>Zip Search</h1>
 
 		<!-- This form will be where users input data about the zips -->
 		<form id="zip-form">
@@ -39,7 +39,7 @@
 			<input type="text" id="zip-input"><br>
 
 			<!-- This button will trigger our AJAX call -->
-			<input id="find-zip" type="submit" value="zip Search">
+			<input id="find-zip" type="submit" class="btn btn-primary" value="zip Search">
 		</form>
 
 		<!-- We'll be dumping our JSON contents in here -->
@@ -49,8 +49,6 @@
 		<script type="text/javascript">
 			// This .on("click") function will trigger the AJAX Call
 			$("#find-zip").on("click", function (event) {
-
-
 				event.preventDefault();
 
 				// Here we grab the text from the input box
@@ -82,16 +80,6 @@
 						// -----------------------------------------------------------------------
 					})
 				});
-			});
-		</script>
-	</div>
-
-					$("#zip-view").text(response[0]);
-					console.log(response[0])
-				});
-
-				// -----------------------------------------------------------------------
-
 			});
 		</script>
 	</div>
@@ -131,7 +119,7 @@
 					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
 				</ul>
 			</div>
-			
+
 			<!-- Day2 -->
 			<div class="card forecast-card">
 				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
