@@ -23,7 +23,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!-- stylesheet include -->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
 	<title>Basic Weather</title>
 
@@ -68,6 +68,24 @@
 					url: queryURL,
 					method: "GET"
 				}).then(function (response) {
+					console.log(response[0].Key)
+
+
+					var forecastURL = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=Eyz3mMQLVVsjPycNTTRNgKgK3NpKxNEy";
+					$.ajax({
+						url: forecastURL,
+						method: "GET"
+					}).then(function (response) {
+						$().text(response)
+						console.log(response)
+
+						// -----------------------------------------------------------------------
+					})
+				});
+			});
+		</script>
+	</div>
+
 					$("#zip-view").text(response[0]);
 					console.log(response[0])
 				});
