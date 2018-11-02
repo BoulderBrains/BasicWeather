@@ -78,22 +78,133 @@
 		</script>
 	</div>
 
-	<div class="page-wrap text-center">
-
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="assets/images/weather.png" alt="Card image cap">
-			<div class="card-body">
-				<h5 id="current-temp" class="card-title">{{ CURRENT TEMP VARIABLE NAME }}</h5>
-				<p class="card-text weather-text">{{ WEATHER TEXT DESCRIPTION}}</p>
+	<div class="page-wrap text-center container">
+		<div class="row">
+			<!-- Current weather card -->
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="assets/images/weather.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">{{ CURRENT TEMP VARIABLE NAME }}</h5>
+					<p class="card-text weather-text">{{ WEATHER TEXT DESCRIPTION}}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time}}</li>
+				</ul>
 			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
-				<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
-				<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
-				<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time}}</li>
-			</ul>
 		</div>
 
+		<div class="row">
+
+			<!-- Forecast weather cards -->
+			<!-- Day1 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+			
+			<!-- Day2 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+
+			<!-- Day3 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+
+			<!-- Day 4 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+
+			<!-- Day5 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+
+			<!-- Day6 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+
+			<!-- Day7 -->
+			<div class="card forecast-card">
+				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 id="current-temp" class="card-title">Day of the week</h5>
+					<p class="card-text weather-text">{{ HighTemp }} - {{ LowTemp }}</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
+					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
+					<li class="list-group-item sunset-time">Sunset time: {{ sunset time }}</li>
+					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
+				</ul>
+			</div>
+
+		</div>
 	</div>
 </body>
 
