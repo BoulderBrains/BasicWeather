@@ -28,7 +28,19 @@ $("#find-zip").on("click", function (event) {
 			$().text(response)
 			console.log(response)
 
-			// -----------------------------------------------------------------------
+		// -----------------------------------------------------------------------
 		})
 	});
+	hideEntryShowForm();
 });
+
+	
+function hideEntryShowForm() {
+	$(".entry-container").hide();
+	$(".card-container").show();
+}
+
+function showEntryHideForm() {
+	$(".entry-container").show();
+	$(".card-container").hide();
+}

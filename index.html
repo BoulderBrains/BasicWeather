@@ -29,27 +29,30 @@
 
 </head>
 
-<body>
-	<div class="container">
-		<h1>Zip Search</h1>
+<!-- When the body loads, trigger the showEntryHideForm() function -->
+<body onload="showEntryHideForm()">
+	<div class="entry-container container">
+		<div class="text-center">
+			<h1>Zip Search</h1>
 
-		<!-- This form will be where users input data about the zips -->
-		<form id="zip-form">
-			<label for="zip-input">enter zip</label>
-			<input type="text" id="zip-input"><br>
+			<!-- This form will be where users input data about the zips -->
+			<form id="zip-form">
+				<label for="zip-input">Zip code: </label>
+				<input type="text" placeholder="94103" id="zip-input"><br>
 
-			<!-- This button will trigger our AJAX call -->
-			<input id="find-zip" type="submit" class="btn btn-primary" value="zip Search">
-		</form>
+				<!-- This button will trigger our AJAX call -->
+				<input id="find-zip" type="submit" class="btn btn-primary" value="Zip Search">
+			</form>
 
-		<!-- We'll be dumping our JSON contents in here -->
-		<div id="zip-view"></div>
+			<!-- We'll be dumping our JSON contents in here -->
+			<div id="zip-view"></div>
+		</div>
 	</div>
 
-	<div class="page-wrap text-center container">
+	<div class="page-wrap text-center card-container">
 		<div class="row">
 			<!-- Current weather card -->
-			<div class="card" style="width: 18rem;">
+			<div class="card">
 				<img class="card-img-top" src="assets/images/weather.png" alt="Card image cap">
 				<div class="card-body">
 					<h5 id="current-temp" class="card-title">{{ CURRENT TEMP VARIABLE NAME }}</h5>
@@ -171,7 +174,6 @@
 					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time }}</li>
 				</ul>
 			</div>
-
 		</div>
 	</div>
 

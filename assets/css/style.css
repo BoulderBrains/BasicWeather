@@ -1,7 +1,8 @@
 .card {
 	margin: 0 auto;
+	width: 288px;
 }
 
 .forecast-card {
-	width: 10rem;
+	width: 160px;
 }
