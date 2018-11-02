@@ -32,3 +32,25 @@ Requirements:
 - Must use Bootstrap or Alternative CSS Framework
 - Must be deployed to github pages
 - Must have user input validation
+
+
+#### Collaboration notes
+###### Github branching/pull request process
+
+*Starting in on work:*
+- In your terminal, cd into the project directory. 
+- Make sure you're on the master branch by running: git branch
+- Make sure you don't have any local changes by running: git status
+- If you're on master AND don't have any local changes run: git pull (this will pull in the latest code from the master branch on your computer, syncing your computer's code with the latest github changes.)
+
+
+*Creating a branch*
+- Make sure you don't have any local changes by running: git status
+- Create a new branch by running 'git checkout -b BRANCH-NAME'
+- Make the changes in your local branch and commit them there. (git add . & git commit process, git git push origin BRANCH-NAME process)
+
+*Creating a pull request*
+- Go to https://github.com/BoulderBrains/BasicWeather
+- Click on the 'Create Pull Request' button
+- Make sure Master is the Base branch and your branch is the second one.
+- Review the pull request, if it looks good click the "Create Pull Request" button
