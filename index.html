@@ -11,6 +11,53 @@
 	
 </head>
 <body>
+	<div class="container">
+		<h1>zip Search</h1>
 	
+		<!-- This form will be where users input data about the zips -->
+		<form id="zip-form">
+		  <label for="zip-input">enter zip</label>
+		  <input type="text" id="zip-input"><br>
+	
+		  <!-- This button will trigger our AJAX call -->
+		  <input id="find-zip" type="submit" value="zip Search">
+		</form>
+	
+		<!-- We'll be dumping our JSON contents in here -->
+		<div id="zip-view"></div>
+	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		  // This .on("click") function will trigger the AJAX Call
+		  $("#find-zip").on("click", function(event) {
+	
+			// event.preventDefault() can be used to prevent an event's default behavior.
+			// Here, it prevents the submit button from trying to submit a form when clicked
+			event.preventDefault();
+	
+			// Here we grab the text from the input box
+			var zip = $("#zip-input").val();
+	
+			// URL
+			var queryURL = "http://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=Eyz3mMQLVVsjPycNTTRNgKgK3NpKxNEy&q=" + zip;
+	
+			// Write code between the dashes below to hit the queryURL with $ajax, then take the response data
+			// and display it in the div with an id of zip-view
+	
+			// ------the reponse.
+	
+			$.ajax({
+			  url: queryURL,
+			  method: "GET"
+			}).then(function(response) {
+			  $("#zip-view").text(response[0]);
+			  console.log(response)
+			});
+	
+			// -----------------------------------------------------------------------
+	
+		  });
+		</script>
+	  </div>
 </body>
 </html>
