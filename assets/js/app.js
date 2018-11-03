@@ -1,3 +1,6 @@
+// This is pulling your personal API key out of the config.js file
+var myApiKey = apiKeys.MY_KEY;
+
 // This .on("click") function will trigger the AJAX Call
 $("#find-zip").on("click", function (event) {
 	event.preventDefault();
@@ -6,7 +9,7 @@ $("#find-zip").on("click", function (event) {
 	var zip = $("#zip-input").val();
 
 	// URL
-	var queryURL = "https://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n&q=" + zip;
+	var queryURL = "https://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=" + myApiKey +"&q=" + zip;
 
 	// Write code between the dashes below to hit the queryURL with $ajax, then take the response data
 	// and display it in the div with an id of zip-view
@@ -20,8 +23,8 @@ $("#find-zip").on("click", function (event) {
 		console.log(response[0].Key)
 
 
-		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n";
-		var currentURL = "http://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n";
+		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey;
+		var currentURL = "http://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey;
 		$.ajax({
 			url: currentURL,
 			method: "GET"
