@@ -6,7 +6,7 @@ $("#find-zip").on("click", function (event) {
 	var zip = $("#zip-input").val();
 
 	// URL
-	var queryURL = "http://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=Eyz3mMQLVVsjPycNTTRNgKgK3NpKxNEy&q=" + zip;
+	var queryURL = "https://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n&q=" + zip;
 
 	// Write code between the dashes below to hit the queryURL with $ajax, then take the response data
 	// and display it in the div with an id of zip-view
@@ -20,7 +20,7 @@ $("#find-zip").on("click", function (event) {
 		console.log(response[0].Key)
 
 
-		var forecastURL = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=Eyz3mMQLVVsjPycNTTRNgKgK3NpKxNEy";
+		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n";
 		$.ajax({
 			url: forecastURL,
 			method: "GET"
