@@ -24,7 +24,7 @@ $("#find-zip").on("click", function (event) {
 
 		// "?details=true&metric=false"
 		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey + "&details=true&metric=false";
-		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey;
+		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey + "&details=true";
 		$.ajax({
 			url: forecastURL,
 			method: "GET"
@@ -32,7 +32,13 @@ $("#find-zip").on("click", function (event) {
 			$().text(response)
 			console.log(response)
 
-
+			$("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit)
+			$(".weather-text").text(response[0].WeatherText)
+			$(".windspeed").text("Winddpeed " + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit)
+			$(".chance-of-precipitation").text("Chance of rain " + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %")
+			$(".visibility").text("Visibility " + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit)
+			$(".pressure").text("Pressure "  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit)
+			
 			//--------------------------cant make api key to work. will update when it does work. 
 			// day1
 			var temp = $("#day1temp");
