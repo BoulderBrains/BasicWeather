@@ -9,7 +9,7 @@ $("#find-zip").on("click", function (event) {
 	var zip = $("#zip-input").val();
 
 	// URL
-	var queryURL = "https://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=" + myApiKey +"&q=" + zip;
+	var queryURL = "https://dataservice.accuweather.com/locations/v1/postalcodes/search" + "?apikey=" + myApiKey + "&q=" + zip;
 
 	// Write code between the dashes below to hit the queryURL with $ajax, then take the response data
 	// and display it in the div with an id of zip-view
@@ -23,7 +23,7 @@ $("#find-zip").on("click", function (event) {
 		console.log(response[0].Key)
 
 		// "?details=true&metric=false"
-		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey;
+		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey + "&details=true&metric=false";
 		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey;
 		$.ajax({
 			url: forecastURL,
@@ -34,36 +34,102 @@ $("#find-zip").on("click", function (event) {
 
 
 			//--------------------------cant make api key to work. will update when it does work. 
-			//var carr = $("#current-temp").text(response);
-		// 	var temp = $("#day1temp");
-		// 	temp.text(response.DailyForecasts[0].Temperature.Maximum.Value +" - ");
-		// 	temp.append(response.DailyForecasts[0].Temperature.Minimum.Value);
-		// 	// var rain = $("#list-group-item chance-of-precipitation").text(response);
-		// 	// var wind = $("#list-group-item windspeed").text(response)
-		// 	// var sunset = $("#list-group-item sunset-time").text(response);
-		// 	// var sunrise = $("#list-group-item sunrise-time").text(response)
-		// 	var temp = $("#day2temp");
-		// 	temp.text(response.DailyForecasts[1].Temperature.Maximum.Value +" - ");
-		// 	temp.append(response.DailyForecasts[1].Temperature.Minimum.Value);
+			// day1
+			var temp = $("#day1temp");
+			temp.text(response.DailyForecasts[0].Temperature.Maximum.Value + " - ");
+			temp.append(response.DailyForecasts[0].Temperature.Minimum.Value);
 
-		// 	var temp = $("#day3temp");
-		// 	temp.text(response.DailyForecasts[2].Temperature.Maximum.Value +" - ");
-		// 	temp.append(response.DailyForecasts[2].Temperature.Minimum.Value);
-		// 	var temp = $("#day4temp");
+			var rain = $("#day1Rain");
+			rain.append(response.DailyForecasts[0].Day.PrecipitationProbability);
+			rain.append("%");
 
-		// 	temp.text(response.DailyForecasts[3].Temperature.Maximum.Value +" - ");
-		// 	temp.append(response.DailyForecasts[3].Temperature.Minimum.Value);
-		// 	var temp = $("#day5temp");
+			var wind = $("#day1Wind");
+			wind.append(response.DailyForecasts[0].Day.Wind.Speed.Value);
+			wind.append(response.DailyForecasts[0].Day.Wind.Speed.Unit);
 
-		// 	temp.text(response.DailyForecasts[4].Temperature.Maximum.Value +" - ");
-		// 	temp.append(response.DailyForecasts[4].Temperature.Minimum.Value);
-		// // -----------------------------------------------------------------------
+			var sunrise = $("#day1Sunrise");
+			sunrise.append(response.DailyForecasts[0].Sun.Rise);
+
+			var sunset = $("#day1Sunset");
+			sunset.append(response.DailyForecasts[0].Sun.Set);
+			// day 2
+			var temp = $("#day2temp");
+			temp.text(response.DailyForecasts[1].Temperature.Maximum.Value + " - ");
+			temp.append(response.DailyForecasts[1].Temperature.Minimum.Value);
+
+			var rain = $("#day2Rain");
+			rain.append(response.DailyForecasts[1].Day.PrecipitationProbability);
+			rain.append("%");
+
+			var wind = $("#day2Wind");
+			wind.append(response.DailyForecasts[1].Day.Wind.Speed.Value);
+			wind.append(response.DailyForecasts[1].Day.Wind.Speed.Unit);
+
+			var sunrise = $("#day2Sunrise");
+			sunrise.append(response.DailyForecasts[1].Sun.Rise);
+
+			var sunset = $("#day2Sunset");
+			sunset.append(response.DailyForecasts[1].Sun.Set);
+
+			// day3
+			var temp = $("#day3temp");
+			temp.text(response.DailyForecasts[2].Temperature.Maximum.Value + " - ");
+			temp.append(response.DailyForecasts[2].Temperature.Minimum.Value);
+
+			var rain = $("#day3Rain");
+			rain.append(response.DailyForecasts[2].Day.PrecipitationProbability);
+			rain.append("%");
+
+			var wind = $("#day3Wind");
+			wind.append(response.DailyForecasts[2].Day.Wind.Speed.Value);
+			wind.append(response.DailyForecasts[2].Day.Wind.Speed.Unit);
+			var sunrise = $("#day3Sunrise");
+			sunrise.append(response.DailyForecasts[2].Sun.Rise);
+
+			var sunset = $("#day3Sunset");
+			sunset.append(response.DailyForecasts[2].Sun.Set);
+			// day 4
+			var temp = $("#day4temp");
+			temp.text(response.DailyForecasts[3].Temperature.Maximum.Value + " - ");
+			temp.append(response.DailyForecasts[3].Temperature.Minimum.Value);
+
+			var rain = $("#day4Rain");
+			rain.append(response.DailyForecasts[3].Day.PrecipitationProbability);
+			rain.append("%");
+
+			var wind = $("#day4Wind");
+			wind.append(response.DailyForecasts[3].Day.Wind.Speed.Value);
+			wind.append(response.DailyForecasts[3].Day.Wind.Speed.Unit);
+			var sunrise = $("#day4Sunrise");
+			sunrise.append(response.DailyForecasts[3].Sun.Rise);
+
+			var sunset = $("#day4Sunset");
+			sunset.append(response.DailyForecasts[3].Sun.Set);
+			// day 5
+			var temp = $("#day5temp");
+			temp.text(response.DailyForecasts[4].Temperature.Maximum.Value + " - ");
+			temp.append(response.DailyForecasts[4].Temperature.Minimum.Value);
+
+			var rain = $("#day5Rain");
+			rain.append(response.DailyForecasts[4].Day.PrecipitationProbability);
+			rain.append("%");
+
+			var wind = $("#day5Wind");
+			wind.append(response.DailyForecasts[4].Day.Wind.Speed.Value);
+			wind.append(response.DailyForecasts[4].Day.Wind.Speed.Unit);
+
+			var sunrise = $("#day5Sunrise");
+			sunrise.append(response.DailyForecasts[4].Sun.Rise);
+
+			var sunset = $("#day5Sunset");
+			sunset.append(response.DailyForecasts[4].Sun.Set);
+			// // -----------------------------------------------------------------------
 		})
 	});
 	hideEntryShowForm();
 });
 
-	
+
 function hideEntryShowForm() {
 	$(".entry-container").hide();
 	$(".card-container").show();
