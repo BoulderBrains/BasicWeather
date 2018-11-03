@@ -22,11 +22,11 @@ $("#find-zip").on("click", function (event) {
 	}).then(function (response) {
 		console.log(response[0].Key)
 
-
+		// "?details=true&metric=false"
 		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey;
-		var currentURL = "http://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey;
+		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey;
 		$.ajax({
-			url: currentURL,
+			url: forecastURL,
 			method: "GET"
 		}).then(function (response) {
 			$().text(response)
