@@ -55,21 +55,14 @@
 			<div class="card">
 				<img class="card-img-top" src="assets/images/weather.png" alt="Card image cap">
 				<div class="card-body">
-					<h5 id="current-temp" class="card-title">{{ CURRENT TEMP VARIABLE NAME }}</h5>
-					<p class="card-text weather-text">{{ WEATHER TEXT DESCRIPTION}}</p>
+					<h5 id="current-temp" id="current-temp" class="card-title">{{ CURRENT TEMP VARIABLE NAME }}</h5>
+					<p class="card-text weather-text" id="current-weather-text">{{ WEATHER TEXT DESCRIPTION}}</p>
 				</div>
 				<ul class="list-group list-group-flush">
-<<<<<<< Updated upstream
-					<li class="list-group-item chance-of-precipitation">Chance of rain:</li>
-					<li class="list-group-item windspeed">Windspeed: </li>
-					<li class="list-group-item sunset-time">Sunset time: </li>
-					<li class="list-group-item sunrise-time">Sunrise time: {{ sunrise time}}</li>
-=======
-					<li class="list-group-item chance-of-precipitation">Chance of rain: {{ % of precipitation }}</li>
-					<li class="list-group-item windspeed">Windspeed: {{ windspeed }}</li>
-					<li class="list-group-item visibility">Visibility:</li>
-					<li class="list-group-item pressure">Pressure:</li>
->>>>>>> Stashed changes
+					<li class="list-group-item chance-of-precipitation" id="current-rain">Chance of rain:</li>
+					<li class="list-group-item windspeed" id="current-wind">Windspeed: </li>
+					<li class="list-group-item sunset-time" id="current-visibility"></li>
+					<li class="list-group-item sunrise-time" id="current-pressure"></li>
 				</ul>
 			</div>
 		</div>

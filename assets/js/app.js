@@ -22,23 +22,32 @@ $("#find-zip").on("click", function (event) {
 	}).then(function (response) {
 		console.log(response[0].Key)
 
-		// "?details=true&metric=false"
-		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey + "&details=true&metric=false";
+		// API url for Current Condition Card
 		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey + "&details=true";
+		
+		$.ajax({
+			url: currentURL,
+			method: "GET"
+		}).then(function (response) {
+			console.log(response)
+
+			$("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
+			$("#current-weather-text").text(response[0].WeatherText);
+			$("#currnt-wind").text("Windspeed " + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
+			$("#current-rain").text("Chance of rain " + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
+			$("#current-visibility").text("Visibility " + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
+			$("#current-pressure").text("Pressure "  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
+		});
+
+
+		// API url for Forecast Cards
+		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=" + myApiKey + "&details=true&metric=false";
+		
 		$.ajax({
 			url: forecastURL,
 			method: "GET"
 		}).then(function (response) {
-			$().text(response)
 			console.log(response)
-
-			$("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit)
-			$(".weather-text").text(response[0].WeatherText)
-			$(".windspeed").text("Winddpeed " + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit)
-			$(".chance-of-precipitation").text("Chance of rain " + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %")
-			$(".visibility").text("Visibility " + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit)
-			$(".pressure").text("Pressure "  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit)
-			
 			//--------------------------cant make api key to work. will update when it does work. 
 			// day1
 			var temp = $("#day1temp");
