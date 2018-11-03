@@ -20,7 +20,7 @@ $("#find-zip").on("click", function (event) {
 		console.log(response[0].Key)
 
 
-		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n";
+		var forecastURL = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + response[0].Key + "?apikey=vyzG1DJskCoASWDFRcf2mVwgCFH8m48n";
 		$.ajax({
 			url: forecastURL,
 			method: "GET"
@@ -28,6 +28,31 @@ $("#find-zip").on("click", function (event) {
 			$().text(response)
 			console.log(response)
 
+
+			//--------------------------cant make api key to work. will update when it does work. 
+			//var carr = $("#current-temp").text(response);
+			var temp = $("#day1temp");
+			temp.text(response.DailyForecasts[0].Temperature.Maximum.Value +" - ");
+			temp.append(response.DailyForecasts[0].Temperature.Minimum.Value);
+			// var rain = $("#list-group-item chance-of-precipitation").text(response);
+			// var wind = $("#list-group-item windspeed").text(response)
+			// var sunset = $("#list-group-item sunset-time").text(response);
+			// var sunrise = $("#list-group-item sunrise-time").text(response)
+			var temp = $("#day2temp");
+			temp.text(response.DailyForecasts[1].Temperature.Maximum.Value +" - ");
+			temp.append(response.DailyForecasts[1].Temperature.Minimum.Value);
+
+			var temp = $("#day3temp");
+			temp.text(response.DailyForecasts[2].Temperature.Maximum.Value +" - ");
+			temp.append(response.DailyForecasts[2].Temperature.Minimum.Value);
+			var temp = $("#day4temp");
+
+			temp.text(response.DailyForecasts[3].Temperature.Maximum.Value +" - ");
+			temp.append(response.DailyForecasts[3].Temperature.Minimum.Value);
+			var temp = $("#day5temp");
+
+			temp.text(response.DailyForecasts[4].Temperature.Maximum.Value +" - ");
+			temp.append(response.DailyForecasts[4].Temperature.Minimum.Value);
 		// -----------------------------------------------------------------------
 		})
 	});
