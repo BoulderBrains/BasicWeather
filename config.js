@@ -1,3 +1,3 @@
 var apiKeys = {
-	MY_KEY : 'Eyz3mMQLVVsjPycNTTRNgKgK3NpKxNEy'
+	MY_KEY : 'vyzG1DJskCoASWDFRcf2mVwgCFH8m48n'
 }
