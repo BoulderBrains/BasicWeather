@@ -1,5 +1,6 @@
 // This is pulling your personal API key out of the config.js file
 var myApiKey = apiKeys.MY_KEY;
+// const moment = require('moment')
 
 // This .on("click") function will trigger the AJAX Call
 $("#find-zip").on("click", function (event) {
@@ -47,8 +48,9 @@ $("#find-zip").on("click", function (event) {
 			url: forecastURL,
 			method: "GET"
 		}).then(function (response) {
-			console.log(response)
-			//--------------------------cant make api key to work. will update when it does work. 
+			console.log(response);
+			
+			
 			// day1
 			var temp = $("#day1temp");
 			temp.text(response.DailyForecasts[0].Temperature.Maximum.Value + " - ");
@@ -63,10 +65,16 @@ $("#find-zip").on("click", function (event) {
 			wind.append(response.DailyForecasts[0].Day.Wind.Speed.Unit);
 
 			var sunrise = $("#day1Sunrise");
-			sunrise.append(response.DailyForecasts[0].Sun.Rise);
+			const unformattedSunriseTime1 = response.DailyForecasts[0].Sun.Rise;
+			const formattedSunriseTime1 = moment(unformattedSunriseTime1).format("h:mm");
+			sunrise.append(formattedSunriseTime1);
 
 			var sunset = $("#day1Sunset");
-			sunset.append(response.DailyForecasts[0].Sun.Set);
+			const unformattedSunsetTime1 = response.DailyForecasts[0].Sun.Set;
+			const formattedSunsetTime1 = moment(unformattedSunsetTime1).format("h:mm");
+			sunset.append(formattedSunsetTime1);
+
+
 			// day 2
 			var temp = $("#day2temp");
 			temp.text(response.DailyForecasts[1].Temperature.Maximum.Value + " - ");
@@ -81,10 +89,15 @@ $("#find-zip").on("click", function (event) {
 			wind.append(response.DailyForecasts[1].Day.Wind.Speed.Unit);
 
 			var sunrise = $("#day2Sunrise");
-			sunrise.append(response.DailyForecasts[1].Sun.Rise);
+			const unformattedSunriseTime2 = response.DailyForecasts[1].Sun.Rise;
+			const formattedSunriseTime2 = moment(unformattedSunriseTime2).format("h:mm");
+			sunrise.append(formattedSunriseTime2);
 
 			var sunset = $("#day2Sunset");
-			sunset.append(response.DailyForecasts[1].Sun.Set);
+			const unformattedSunsetTime2 = response.DailyForecasts[1].Sun.Set;
+			const formattedSunsetTime2 = moment(unformattedSunsetTime2).format("h:mm");
+			sunset.append(formattedSunsetTime2);
+
 
 			// day3
 			var temp = $("#day3temp");
@@ -98,11 +111,18 @@ $("#find-zip").on("click", function (event) {
 			var wind = $("#day3Wind");
 			wind.append(response.DailyForecasts[2].Day.Wind.Speed.Value);
 			wind.append(response.DailyForecasts[2].Day.Wind.Speed.Unit);
+			
 			var sunrise = $("#day3Sunrise");
-			sunrise.append(response.DailyForecasts[2].Sun.Rise);
+			const unformattedSunriseTime3 = response.DailyForecasts[2].Sun.Rise;
+			const formattedSunriseTime3 = moment(unformattedSunriseTime3).format("h:mm");
+			sunrise.append(formattedSunriseTime3);
 
 			var sunset = $("#day3Sunset");
-			sunset.append(response.DailyForecasts[2].Sun.Set);
+			const unformattedSunsetTime3 = response.DailyForecasts[2].Sun.Set;
+			const formattedSunsetTime3 = moment(unformattedSunsetTime3).format("h:mm");
+			sunset.append(formattedSunsetTime3);
+
+
 			// day 4
 			var temp = $("#day4temp");
 			temp.text(response.DailyForecasts[3].Temperature.Maximum.Value + " - ");
@@ -115,11 +135,18 @@ $("#find-zip").on("click", function (event) {
 			var wind = $("#day4Wind");
 			wind.append(response.DailyForecasts[3].Day.Wind.Speed.Value);
 			wind.append(response.DailyForecasts[3].Day.Wind.Speed.Unit);
+			
 			var sunrise = $("#day4Sunrise");
-			sunrise.append(response.DailyForecasts[3].Sun.Rise);
+			const unformattedSunriseTime4 = response.DailyForecasts[3].Sun.Rise;
+			const formattedSunriseTime4 = moment(unformattedSunriseTime4).format("h:mm");
+			sunrise.append(formattedSunriseTime4);
 
 			var sunset = $("#day4Sunset");
-			sunset.append(response.DailyForecasts[3].Sun.Set);
+			const unformattedSunsetTime4 = response.DailyForecasts[3].Sun.Set;
+			const formattedSunsetTime4 = moment(unformattedSunsetTime4).format("h:mm");
+			sunset.append(formattedSunsetTime4);
+
+
 			// day 5
 			var temp = $("#day5temp");
 			temp.text(response.DailyForecasts[4].Temperature.Maximum.Value + " - ");
@@ -134,10 +161,14 @@ $("#find-zip").on("click", function (event) {
 			wind.append(response.DailyForecasts[4].Day.Wind.Speed.Unit);
 
 			var sunrise = $("#day5Sunrise");
-			sunrise.append(response.DailyForecasts[4].Sun.Rise);
+			const unformattedSunriseTime5 = response.DailyForecasts[4].Sun.Rise;
+			const formattedSunriseTime5 = moment(unformattedSunriseTime5).format("h:mm");
+			sunrise.append(formattedSunriseTime5);
 
 			var sunset = $("#day5Sunset");
-			sunset.append(response.DailyForecasts[4].Sun.Set);
+			const unformattedSunsetTime5 = response.DailyForecasts[4].Sun.Set;
+			const formattedSunsetTime5 = moment(unformattedSunsetTime5).format("h:mm");
+			sunset.append(formattedSunsetTime5);
 			// // -----------------------------------------------------------------------
 		})
 	});
