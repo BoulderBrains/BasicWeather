@@ -67,11 +67,13 @@ $("#find-zip").on("click", function (event) {
 			const unformattedSunriseTime1 = response.DailyForecasts[0].Sun.Rise;
 			const formattedSunriseTime1 = moment(unformattedSunriseTime1).format("h:mm");
 			sunrise.append(formattedSunriseTime1);
+			sunrise.append(" am");
 
 			var sunset = $("#day1Sunset");
 			const unformattedSunsetTime1 = response.DailyForecasts[0].Sun.Set;
 			const formattedSunsetTime1 = moment(unformattedSunsetTime1).format("h:mm");
 			sunset.append(formattedSunsetTime1);
+			sunset.append(" pm");
 
 
 			// day 2
@@ -91,11 +93,13 @@ $("#find-zip").on("click", function (event) {
 			const unformattedSunriseTime2 = response.DailyForecasts[1].Sun.Rise;
 			const formattedSunriseTime2 = moment(unformattedSunriseTime2).format("h:mm");
 			sunrise.append(formattedSunriseTime2);
+			sunrise.append(" am");
 
 			var sunset = $("#day2Sunset");
 			const unformattedSunsetTime2 = response.DailyForecasts[1].Sun.Set;
 			const formattedSunsetTime2 = moment(unformattedSunsetTime2).format("h:mm");
 			sunset.append(formattedSunsetTime2);
+			sunset.append(" pm");
 
 
 			// day3
@@ -115,11 +119,13 @@ $("#find-zip").on("click", function (event) {
 			const unformattedSunriseTime3 = response.DailyForecasts[2].Sun.Rise;
 			const formattedSunriseTime3 = moment(unformattedSunriseTime3).format("h:mm");
 			sunrise.append(formattedSunriseTime3);
+			sunrise.append(" am");
 
 			var sunset = $("#day3Sunset");
 			const unformattedSunsetTime3 = response.DailyForecasts[2].Sun.Set;
 			const formattedSunsetTime3 = moment(unformattedSunsetTime3).format("h:mm");
 			sunset.append(formattedSunsetTime3);
+			sunset.append(" pm");
 
 
 			// day 4
@@ -139,11 +145,13 @@ $("#find-zip").on("click", function (event) {
 			const unformattedSunriseTime4 = response.DailyForecasts[3].Sun.Rise;
 			const formattedSunriseTime4 = moment(unformattedSunriseTime4).format("h:mm");
 			sunrise.append(formattedSunriseTime4);
+			sunrise.append(" am");
 
 			var sunset = $("#day4Sunset");
 			const unformattedSunsetTime4 = response.DailyForecasts[3].Sun.Set;
 			const formattedSunsetTime4 = moment(unformattedSunsetTime4).format("h:mm");
 			sunset.append(formattedSunsetTime4);
+			sunset.append(" pm");
 
 
 			// day 5
@@ -163,11 +171,13 @@ $("#find-zip").on("click", function (event) {
 			const unformattedSunriseTime5 = response.DailyForecasts[4].Sun.Rise;
 			const formattedSunriseTime5 = moment(unformattedSunriseTime5).format("h:mm");
 			sunrise.append(formattedSunriseTime5);
+			sunrise.append(" am");
 
 			var sunset = $("#day5Sunset");
 			const unformattedSunsetTime5 = response.DailyForecasts[4].Sun.Set;
 			const formattedSunsetTime5 = moment(unformattedSunsetTime5).format("h:mm");
 			sunset.append(formattedSunsetTime5);
+			sunset.append(" pm");
 			// // -----------------------------------------------------------------------
 		})
 	});
