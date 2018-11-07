@@ -33,10 +33,10 @@ $("#find-zip").on("click", function (event) {
 
 			$("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
 			$("#current-weather-text").text(response[0].WeatherText);
-			$("#currnt-wind").text("Windspeed " + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
-			$("#current-rain").text("Chance of rain " + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
-			$("#current-visibility").text("Visibility " + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
-			$("#current-pressure").text("Pressure "  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
+			$("#current-wind").append( + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
+			$("#current-rain").append( + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
+			$("#current-visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
+			$("#current-pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
 		});
 
 
