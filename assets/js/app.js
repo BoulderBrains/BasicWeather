@@ -1,6 +1,5 @@
 // This is pulling your personal API key out of the config.js file
 var myApiKey = apiKeys.MY_KEY;
-// const moment = require('moment')
 
 // This .on("click") function will trigger the AJAX Call
 $("#find-zip").on("click", function (event) {
@@ -50,7 +49,7 @@ $("#find-zip").on("click", function (event) {
 		}).then(function (response) {
 			console.log(response);
 			
-			
+
 			// day1
 			var temp = $("#day1temp");
 			temp.text(response.DailyForecasts[0].Temperature.Maximum.Value + " - ");
