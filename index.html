@@ -30,7 +30,7 @@
 </head>
 
 <!-- When the body loads, trigger the showEntryHideForm() function -->
-<body onload="showEntryHideForm()">
+<body onload="showEntryHideForm()" background="assets/images/back.png">
 	<div class="entry-container container">
 		<div class="text-center">
 			<h1>Zip Search</h1>
@@ -74,7 +74,7 @@
 			<div class="card forecast-card">
 				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
 				<div class="card-body">
-					<h5 id="dayOfWeek1" class="card-title">Day of the week</h5>
+					<h5 id="day1" class="card-title">Day of the week</h5>
 					<p class="card-text weather-text" id="day1temp">{{ HighTemp }} - {{ LowTemp }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -132,7 +132,7 @@
 				</ul>
 			</div>
 
-			<!-- Day5
+			<!-- Day5 -->
 			<div class="card forecast-card">
 				<img class="card-img-top" src="assets/images/sun.png" alt="Card image cap">
 				<div class="card-body">
@@ -146,7 +146,7 @@
 					<li class="list-group-item sunset-time"id="day5Sunset"><strong>Sunset time: </strong></li>
 					
 				</ul>
-			</div> -->
+			</div>
 
 		<!-- Back button, hides weather cards and shows zipcode input field -->
 		<input type="button" class="btn btn-secondary" value="Back" onclick="showEntryHideForm()">
