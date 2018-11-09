@@ -224,3 +224,7 @@ function showEntryHideForm() {
 	$(".entry-container").show();
 	$(".card-container").hide();
 }
+
+function showAdditonalDayInfo() {
+	// Onclick of forcast card, display additional day weather info in #additional-day-data
+}
