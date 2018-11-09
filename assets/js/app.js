@@ -73,7 +73,7 @@ $("#find-zip").on("click", function (event) {
 			// day1
 			var n = new Date().getDay();
 			if (n < 7){
-			$("#day1 #today").text(d[n]);
+			$("#day1").text(d[n]);
 			}else{
 				$("#day1").text(d[n - 7]);
 			};
