@@ -33,7 +33,13 @@
 <body onload="showEntryHideForm()" background="assets/images/back.png">
 	<div class="entry-container container">
 		<div class="text-center">
-			<h1>Zip Search</h1>
+			<span><h1 id="today">Today</h1></span>
+			<h1><marquee id="time-display" behavior="scroll" bgcolor="white" loop="-1" width="30%"><i><font color="black">Time : </font></i>
+			</marquee></h1>
+			<h1><marquee id="date" behavior="scroll" bgcolor="white" loop="-1" width="30%">
+					<i><font color="black">Date : </font></i>
+				  </marquee></h1>
+			<h2>CHECK THE WEATHER</h2>
 
 			<!-- This form will be where users input data about the zips -->
 			<form id="zip-form">
