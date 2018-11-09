@@ -52,13 +52,23 @@ $("#find-zip").on("click", function (event) {
 			console.log(new Date());
 			var d = ["Sunday","Monday", "Tuesday", "Wednesday", 
 			"Thursday", "Friday", "Saturday"];
+
+
 			// day1
-			var n = new Date().getDay() + 1;
+			var n = new Date().getDay();
 			if (n < 7){
 			$("#day1").text(d[n]);
 			}else{
 				$("#day1").text(d[n - 7]);
 			};
+
+			// Icon for card
+			var weatherIconContainer1 = $('#weather-icon1');
+			var iconNumber = "0" + response.DailyForecasts[0].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer1.attr('src', imageURL + iconNumber + '-s.png');
+			
+
 			var temp = $("#day1temp");
 			temp.text(response.DailyForecasts[0].Temperature.Minimum.Value + " - ");
 			temp.append(response.DailyForecasts[0].Temperature.Maximum.Value);
@@ -89,12 +99,19 @@ $("#find-zip").on("click", function (event) {
 			var Suntime = $("#day1SunTime")
 			Suntime.append(response.DailyForecasts[0].HoursOfSun)
 			// day 2
-			var n = new Date().getDay() + 2;
+			var n = new Date().getDay() + 1;
 			if (n < 7){
 				$("#day2").text(d[n]);
 				}else{
 					$("#day2").text(d[n - 7]);
 				};
+
+			// Icon for card
+			var weatherIconContainer2 = $('#weather-icon2');
+			var iconNumber = "0" + response.DailyForecasts[1].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer2.attr('src', imageURL + iconNumber + '-s.png');
+
 			var temp = $("#day2temp");
 			temp.text(response.DailyForecasts[1].Temperature.Minimum.Value + " - ");
 			temp.append(response.DailyForecasts[1].Temperature.Maximum.Value);
@@ -126,12 +143,20 @@ $("#find-zip").on("click", function (event) {
 			Suntime.append(response.DailyForecasts[1].HoursOfSun)
 
 			// day3
-			var n = new Date().getDay() + 3;
+			var n = new Date().getDay() + 2;
 			if (n < 7){
 				$("#day3").text(d[n]);
 				}else{
 					$("#day3").text(d[n - 7]);
 				};
+
+				// Icon for card
+			var weatherIconContainer3 = $('#weather-icon3');
+			var iconNumber = "0" + response.DailyForecasts[2].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer3.attr('src', imageURL + iconNumber + '-s.png');
+
+
 			var temp = $("#day3temp");
 			temp.text(response.DailyForecasts[2].Temperature.Minimum.Value + " - ");
 			temp.append(response.DailyForecasts[2].Temperature.Maximum.Value);
@@ -164,12 +189,20 @@ $("#find-zip").on("click", function (event) {
 
 
 			// day 4
-			var n = new Date().getDay() + 4;
+			var n = new Date().getDay() + 3;
 			if (n < 7){
 				$("#day4").text(d[n]);
 				}else{
 					$("#day4").text(d[n - 7]);
 				};
+
+			// Icon for card
+			var weatherIconContainer4 = $('#weather-icon4');
+			var iconNumber = "0" + response.DailyForecasts[3].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer4.attr('src', imageURL + iconNumber + '-s.png');
+
+
 			var temp = $("#day4temp");
 			temp.text(response.DailyForecasts[3].Temperature.Minimum.Value + " - ");
 			temp.append(response.DailyForecasts[3].Temperature.Maximum.Value);
@@ -200,12 +233,20 @@ $("#find-zip").on("click", function (event) {
 			var Suntime = $("#day4SunTime")
 			Suntime.append(response.DailyForecasts[3].HoursOfSun)
 			// day 5
-			var n = new Date().getDay() + 5;
+			var n = new Date().getDay() + 4;
 			if (n < 7){
 				$("#day5").text(d[n]);
 				}else{
 					$("#day5").text(d[n - 7]);
 				};
+
+
+			// Icon for card
+			var weatherIconContainer5 = $('#weather-icon5');
+			var iconNumber = "0" + response.DailyForecasts[4].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer5.attr('src', imageURL + iconNumber + '-s.png');
+
 			var temp = $("#day5temp");
 			temp.text(response.DailyForecasts[4].Temperature.Minimum.Value + " - ");
 			temp.append(response.DailyForecasts[4].Temperature.Maximum.Value);
