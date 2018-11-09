@@ -29,13 +29,13 @@ $("#find-zip").on("click", function (event) {
 			url: currentURL,
 			method: "GET"
 		}).then(function (response) {
-			console.log(response)
-			$("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
-			$("#current-weather-text").text(response[0].WeatherText);
-			$("#current-wind").append( + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
-			$("#current-rain").append( + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
-			$("#current-visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
-			$("#current-pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
+			// console.log(response)
+			// $("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
+			// $("#current-weather-text").text(response[0].WeatherText);
+			// $("#current-wind").append( + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
+			// $("#current-rain").append( + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
+			// $("#current-visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
+			// $("#current-pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
 		});
 
 
@@ -58,8 +58,8 @@ $("#find-zip").on("click", function (event) {
 				$("#day1").text(d[n - 7]);
 			};
 			var temp = $("#day1temp");
-			temp.text(response.DailyForecasts[0].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[0].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[0].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[0].Temperature.Maximum.Value);
 
 			var rain = $("#day1Rain");
 			rain.append(response.DailyForecasts[0].Day.PrecipitationProbability);
@@ -90,8 +90,8 @@ $("#find-zip").on("click", function (event) {
 					$("#day2").text(d[n - 7]);
 				};
 			var temp = $("#day2temp");
-			temp.text(response.DailyForecasts[1].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[1].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[1].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[1].Temperature.Maximum.Value);
 
 			var rain = $("#day2Rain");
 			rain.append(response.DailyForecasts[1].Day.PrecipitationProbability);
@@ -122,8 +122,8 @@ $("#find-zip").on("click", function (event) {
 					$("#day3").text(d[n - 7]);
 				};
 			var temp = $("#day3temp");
-			temp.text(response.DailyForecasts[2].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[2].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[2].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[2].Temperature.Maximum.Value);
 
 			var rain = $("#day3Rain");
 			rain.append(response.DailyForecasts[2].Day.PrecipitationProbability);
@@ -154,8 +154,8 @@ $("#find-zip").on("click", function (event) {
 					$("#day4").text(d[n - 7]);
 				};
 			var temp = $("#day4temp");
-			temp.text(response.DailyForecasts[3].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[3].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[3].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[3].Temperature.Maximum.Value);
 
 			var rain = $("#day4Rain");
 			rain.append(response.DailyForecasts[3].Day.PrecipitationProbability);
@@ -186,8 +186,8 @@ $("#find-zip").on("click", function (event) {
 					$("#day5").text(d[n - 7]);
 				};
 			var temp = $("#day5temp");
-			temp.text(response.DailyForecasts[4].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[4].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[4].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[4].Temperature.Maximum.Value);
 
 			var rain = $("#day5Rain");
 			rain.append(response.DailyForecasts[4].Day.PrecipitationProbability);
