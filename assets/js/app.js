@@ -1,11 +1,24 @@
 // This is pulling your personal API key out of the config.js file
-var myApiKey = apiKeys.MY_KEY2;
+var myApiKey = apiKeys.MY_KEY;
+console.log(new Date())
+console.log(new Date().getTime())
+console.log(new moment().format("HH:mm"));
+var d = ["Sunday","Monday", "Tuesday", "Wednesday", 
+			"Thursday", "Friday", "Saturday"];
+			var n = new Date().getDay();
+			$("#today").text(d[n]);
+			$("#time-display").append(new moment().format("HH:mm"));
+			var m = new Date().getMonth() + 1;
+			var t = new Date().getDate();
+			var y = new Date().getFullYear();
+			$("#date").append(m + "/" + t + "/" + y);
 
 // This .on("click") function will trigger the AJAX Call
 $("#find-zip").on("click", function (event) {
 	event.preventDefault();
 
 	// Here we grab the text from the input box
+
 	var zip = $("#zip-input").val();
 
 	// URL
@@ -23,6 +36,7 @@ $("#find-zip").on("click", function (event) {
 		method: "GET"
 	}).then(function (response) {
 		console.log(response[0].Key)
+			
 
 		// API url for Current Condition Card
 		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey + "&details=true";
@@ -50,6 +64,8 @@ $("#find-zip").on("click", function (event) {
 		}).then(function (response) {
 			console.log(response);
 			console.log(new Date());
+			$("time-display").text();
+			$("date").append(new Date());
 			var d = ["Sunday","Monday", "Tuesday", "Wednesday", 
 			"Thursday", "Friday", "Saturday"];
 
@@ -57,7 +73,7 @@ $("#find-zip").on("click", function (event) {
 			// day1
 			var n = new Date().getDay();
 			if (n < 7){
-			$("#day1").text(d[n]);
+			$("#day1 #today").text(d[n]);
 			}else{
 				$("#day1").text(d[n - 7]);
 			};
