@@ -295,7 +295,7 @@ $("#find-zip").on("click", function (event) {
 			// // -----------------------------------------------------------------------
 			// left button....how to hide?
 			var userZip= $("#zip2");
-			userZip.text(zip);
+			userZip.text("zipcode" + zip);
 		})
 	});
 	hideEntryShowForm();
