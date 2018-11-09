@@ -288,14 +288,14 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(" pm");
 
 			var phase = $("#day5Phase");
-			phase.append(response.DailyForecasts[4].Day.LongPhrase)
+			phase.append(response.DailyForecasts[4].Day.LongPhrase);
 
 			var Suntime = $("#day5SunTime")
-			Suntime.append(response.DailyForecasts[4].HoursOfSun)
+			Suntime.append(response.DailyForecasts[4].HoursOfSun);
 			// // -----------------------------------------------------------------------
 			// left button....how to hide?
-			var userZip= $("#zip2")
-			userZip.append(zip)
+			var userZip= $("#zip2");
+			userZip.text(zip);
 		})
 	});
 	hideEntryShowForm();
