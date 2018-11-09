@@ -11,3 +11,9 @@
 .forecast-card {
 	width: 160px;
 }
+.data-card-body{
+	margin: 0 auto;
+	width:  300px auto;
+	font-style: italic;
+	align-self: auto;
+}
