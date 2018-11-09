@@ -1,5 +1,5 @@
 // This is pulling your personal API key out of the config.js file
-var myApiKey = apiKeys.MY_KEY;
+var myApiKey = apiKeys.MY_KEY2;
 
 // This .on("click") function will trigger the AJAX Call
 $("#find-zip").on("click", function (event) {
@@ -16,6 +16,8 @@ $("#find-zip").on("click", function (event) {
 
 	// ------the reponse.
 
+	
+
 	$.ajax({
 		url: queryURL,
 		method: "GET"
@@ -29,13 +31,13 @@ $("#find-zip").on("click", function (event) {
 			url: currentURL,
 			method: "GET"
 		}).then(function (response) {
-			// console.log(response)
+			console.log(response)
 			// $("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
 			// $("#current-weather-text").text(response[0].WeatherText);
 			// $("#current-wind").append( + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
 			// $("#current-rain").append( + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
-			// $("#current-visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
-			// $("#current-pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
+			$("#day1Visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
+			$("#day1Pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
 		});
 
 
@@ -91,7 +93,11 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime1);
 			sunset.append(" pm");
 
+			var phase = $("#day1Phase");
+			phase.append(response.DailyForecasts[0].Day.LongPhrase)
 
+			var Suntime = $("#day1SunTime")
+			Suntime.append(response.DailyForecasts[0].HoursOfSun)
 			// day 2
 			var n = new Date().getDay() + 1;
 			if (n < 7){
@@ -130,6 +136,11 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime2);
 			sunset.append(" pm");
 
+			var phase = $("#day2Phase");
+			phase.append(response.DailyForecasts[1].Day.LongPhrase)
+
+			var Suntime = $("#day2SunTime")
+			Suntime.append(response.DailyForecasts[1].HoursOfSun)
 
 			// day3
 			var n = new Date().getDay() + 2;
@@ -169,6 +180,12 @@ $("#find-zip").on("click", function (event) {
 			const formattedSunsetTime3 = moment(unformattedSunsetTime3).format("h:mm");
 			sunset.append(formattedSunsetTime3);
 			sunset.append(" pm");
+
+			var phase = $("#day3Phase");
+			phase.append(response.DailyForecasts[2].Day.LongPhrase)
+
+			var Suntime = $("#day3SunTime")
+			Suntime.append(response.DailyForecasts[2].HoursOfSun)
 
 
 			// day 4
@@ -210,7 +227,11 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime4);
 			sunset.append(" pm");
 
+			var phase = $("#day4Phase");
+			phase.append(response.DailyForecasts[3].Day.LongPhrase)
 
+			var Suntime = $("#day4SunTime")
+			Suntime.append(response.DailyForecasts[3].HoursOfSun)
 			// day 5
 			var n = new Date().getDay() + 4;
 			if (n < 7){
@@ -249,7 +270,16 @@ $("#find-zip").on("click", function (event) {
 			const formattedSunsetTime5 = moment(unformattedSunsetTime5).format("h:mm");
 			sunset.append(formattedSunsetTime5);
 			sunset.append(" pm");
+
+			var phase = $("#day5Phase");
+			phase.append(response.DailyForecasts[4].Day.LongPhrase)
+
+			var Suntime = $("#day5SunTime")
+			Suntime.append(response.DailyForecasts[4].HoursOfSun)
 			// // -----------------------------------------------------------------------
+			// left button....how to hide?
+			var userZip= $("#zip2")
+			userZip.append(zip)
 		})
 	});
 	hideEntryShowForm();

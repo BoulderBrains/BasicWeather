@@ -30,6 +30,7 @@
 </head>
 
 <!-- When the body loads, trigger the showEntryHideForm() function -->
+
 <body onload="showEntryHideForm()" background="assets/images/back.png">
 	<div class="entry-container container">
 		<div class="text-center">
@@ -47,6 +48,17 @@
 			<!-- We'll be dumping our JSON contents in here -->
 			<div id="zip-view"></div>
 		</div>
+	</div>
+	<!-- second button -->
+
+	<div>
+		<div class="left">
+			<h2 id="zip2">Zip: </h2>
+		</div>
+			<!-- This button will trigger our AJAX call -->
+			<button onclick="showEntryHideForm()">
+				<input id="find-zip2" type="submit2" class="btn btn-primary2" value="Search Again">
+		</button>
 	</div>
 
 	<div class="page-wrap text-center card-container">
@@ -80,8 +92,6 @@
 					<p class="card-text weather-text" id="day1temp">{{ HighTemp }} - {{ LowTemp }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<!-- <li class="list-group-item chance-of-precipitation" id="day1Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed" id="day1Wind"><strong>Windspeed: </strong></li> -->
 					<li class="list-group-item sunrise-time" id="day1Sunrise"><strong>Sunrise time: </strong></li>
 					<li class="list-group-item sunset-time" id="day1Sunset"><strong>Sunset time: </strong></li>
 				</ul>
@@ -95,11 +105,9 @@
 					<p class="card-text weather-text" id="day2temp">{{ HighTemp }} - {{ LowTemp }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<!-- <li class="list-group-item chance-of-precipitation"id="day2Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed"id="day2Wind"><strong>Windspeed: </strong></li> -->
 					<li class="list-group-item sunrise-time" id="day2Sunrise"><strong>Sunrise time: </strong></li>
 					<li class="list-group-item sunset-time" id="day2Sunset"><strong>Sunset time: </strong></li>
-					
+
 				</ul>
 			</div>
 
@@ -111,11 +119,9 @@
 					<p class="card-text weather-text" id="day3temp">{{ HighTemp }} - {{ LowTemp }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<!-- <li class="list-group-item chance-of-precipitation"id="day3Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed"id="day3Wind"><strong>Windspeed: </strong></li> -->
-					<li class="list-group-item sunrise-time"id="day3Sunrise"><strong>Sunrise time: </strong></li>
+					<li class="list-group-item sunrise-time" id="day3Sunrise"><strong>Sunrise time: </strong></li>
 					<li class="list-group-item sunset-time" id="day3Sunset"><strong>Sunset time: </strong></li>
-					
+
 				</ul>
 			</div>
 
@@ -127,10 +133,8 @@
 					<p class="card-text weather-text" id="day4temp">{{ HighTemp }} - {{ LowTemp }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<!-- <li class="list-group-item chance-of-precipitation" id="day4Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed"id="day4Wind"><strong>Windspeed: </strong></li> -->
-					<li class="list-group-item sunrise-time"id="day4Sunrise"><strong>Sunrise time: </strong></li>
-					<li class="list-group-item sunset-time"id="day4Sunset"><strong>Sunset time: </strong></li>
+					<li class="list-group-item sunrise-time" id="day4Sunrise"><strong>Sunrise time: </strong></li>
+					<li class="list-group-item sunset-time" id="day4Sunset"><strong>Sunset time: </strong></li>
 				</ul>
 			</div>
 
@@ -142,27 +146,61 @@
 					<p class="card-text weather-text" id="day5temp">{{ HighTemp }} - {{ LowTemp }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<!-- <li class="list-group-item chance-of-precipitation" id="day5Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed"id="day5Wind"><strong>Windspeed: </strong></li> -->
-					<li class="list-group-item sunrise-time"id="day5Sunrise"><strong>Sunrise time: </strong></li>
-					<li class="list-group-item sunset-time"id="day5Sunset"><strong>Sunset time: </strong></li>
-					
+					<li class="list-group-item sunrise-time" id="day5Sunrise"><strong>Sunrise time: </strong></li>
+					<li class="list-group-item sunset-time" id="day5Sunset"><strong>Sunset time: </strong></li>
+
 				</ul>
 			</div>
 
-		<!-- Back button, hides weather cards and shows zipcode input field -->
-		<input type="button" class="btn btn-secondary" value="Back" onclick="showEntryHideForm()">
-	</div>
+			<!-- Back button, hides weather cards and shows zipcode input field -->
+			<input type="button" class="btn btn-secondary" value="Back" onclick="showEntryHideForm()">
+		</div>
 
-	<div id="additional-day-data"></div>
+		<!-- this is info for the additional boxes, prob should for loop -->
+		<div id="additional-day-data">
+			<div class="data-card-body">
+				<div class="day1">
+					<li class="list-group-item chance-of-precipitation" id="day1Rain"><strong>Chance of rain: </strong></li>
+					<li class="list-group-item windspeed" id="day1Wind"><strong>Windspeed: </strong></li>
+					<li class="list-group-item dayLongPhase" id="day1Phase"><strong>Today will be:</strong></li>
+					<li class="list-group-item hoursOfSun" id="day1SunTime"><strong>Hours Of Sunshine :)</strong></li>
+					<li class="list-group-item visability" id="day1Visibility"><strong>Visibility: </strong></li>
+					<li class="list-group-item pressure" id="day1Pressure"><strong>Pressure: </strong></li>
+				</div>
+				<div class="day2">
+					<li class="list-group-item chance-of-precipitation" id="day2Rain"><strong>Chance of rain: </strong></li>
+					<li class="list-group-item windspeed" id="day2Wind"><strong>Windspeed: </strong></li>
+					<li class="list-group-item dayLongPhase" id="day2Phase"><strong>Today will be:</strong></li>
+					<li class="list-group-item hoursOfSun" id="day2SunTime"><strong>Hours Of Sunshine :)</strong></li>
+				</div>
+				<div class="day3">
+					<li class="list-group-item chance-of-precipitation" id="day3Rain"><strong>Chance of rain: </strong></li>
+					<li class="list-group-item windspeed" id="day3Wind"><strong>Windspeed: </strong></li>
+					<li class="list-group-item dayLongPhase" id="day3Phase"><strong>Today will be:</strong></li>
+					<li class="list-group-item hoursOfSun" id="day3SunTime"><strong>Hours Of Sunshine :)</strong></li>
+				</div>
+				<div class="day4">
+					<li class="list-group-item chance-of-precipitation" id="day4Rain"><strong>Chance of rain: </strong></li>
+					<li class="list-group-item windspeed" id="day4Wind"><strong>Windspeed: </strong></li>
+					<li class="list-group-item dayLongPhase" id="day4Phase"><strong>Today will be:</strong></li>
+					<li class="list-group-item hoursOfSun" id="day4SunTime"><strong>Hours Of Sunshine :)</strong></li>
+				</div>
+				<div class="day5">
+					<li class="list-group-item chance-of-precipitation" id="day5Rain"><strong>Chance of rain: </strong></li>
+					<li class="list-group-item windspeed" id="day5Wind"><strong>Windspeed: </strong></li>
+					<li class="list-group-item dayLongPhase" id="day5Phase"><strong>Today will be:</strong></li>
+					<li class="list-group-item hoursOfSun" id="day5SunTime"><strong>Hours Of Sunshine :)</strong></li>
+				</div>
+			</div>
+		</div>
 
-	
-	<!-- Config JS file include -->
-	<script src="assets/js/config.js"></script>
-	<!-- Moment.js include -->
-	<script src="https://unpkg.com/moment"></script>
-	<!-- Our JS file include -->
-	<script src="assets/js/app.js"></script>
+
+		<!-- Config JS file include -->
+		<script src="assets/js/config.js"></script>
+		<!-- Moment.js include -->
+		<script src="https://unpkg.com/moment"></script>
+		<!-- Our JS file include -->
+		<script src="assets/js/app.js"></script>
 </body>
 
 </html>
