@@ -29,6 +29,8 @@ $("#find-zip").on("click", function (event) {
 
 	// ------the reponse.
 
+	
+
 	$.ajax({
 		url: queryURL,
 		method: "GET"
@@ -44,12 +46,12 @@ $("#find-zip").on("click", function (event) {
 			method: "GET"
 		}).then(function (response) {
 			console.log(response)
-			$("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
-			$("#current-weather-text").text(response[0].WeatherText);
-			$("#current-wind").append( + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
-			$("#current-rain").append( + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
-			$("#current-visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
-			$("#current-pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
+			// $("#current-temp").text(response[0].Temperature.Imperial.Value + " " + response[0].Temperature.Imperial.Unit);
+			// $("#current-weather-text").text(response[0].WeatherText);
+			// $("#current-wind").append( + response[0].Wind.Speed.Imperial.Value + " " + response[0].Wind.Speed.Imperial.Unit);
+			// $("#current-rain").append( + response[0].PrecipitationSummary.Precipitation.Imperial.Value + " %");
+			$("#day1Visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
+			$("#day1Pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
 		});
 
 
@@ -66,16 +68,26 @@ $("#find-zip").on("click", function (event) {
 			$("date").append(new Date());
 			var d = ["Sunday","Monday", "Tuesday", "Wednesday", 
 			"Thursday", "Friday", "Saturday"];
+
+
 			// day1
-			var n = new Date().getDay() + 1;
+			var n = new Date().getDay();
 			if (n < 7){
 			$("#day1 #today").text(d[n]);
 			}else{
 				$("#day1").text(d[n - 7]);
 			};
+
+			// Icon for card
+			var weatherIconContainer1 = $('#weather-icon1');
+			var iconNumber = "0" + response.DailyForecasts[0].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer1.attr('src', imageURL + iconNumber + '-s.png');
+			
+
 			var temp = $("#day1temp");
-			temp.text(response.DailyForecasts[0].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[0].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[0].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[0].Temperature.Maximum.Value);
 
 			var rain = $("#day1Rain");
 			rain.append(response.DailyForecasts[0].Day.PrecipitationProbability);
@@ -97,17 +109,28 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime1);
 			sunset.append(" pm");
 
+			var phase = $("#day1Phase");
+			phase.append(response.DailyForecasts[0].Day.LongPhrase)
 
+			var Suntime = $("#day1SunTime")
+			Suntime.append(response.DailyForecasts[0].HoursOfSun)
 			// day 2
-			var n = new Date().getDay() + 2;
+			var n = new Date().getDay() + 1;
 			if (n < 7){
 				$("#day2").text(d[n]);
 				}else{
 					$("#day2").text(d[n - 7]);
 				};
+
+			// Icon for card
+			var weatherIconContainer2 = $('#weather-icon2');
+			var iconNumber = "0" + response.DailyForecasts[1].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer2.attr('src', imageURL + iconNumber + '-s.png');
+
 			var temp = $("#day2temp");
-			temp.text(response.DailyForecasts[1].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[1].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[1].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[1].Temperature.Maximum.Value);
 
 			var rain = $("#day2Rain");
 			rain.append(response.DailyForecasts[1].Day.PrecipitationProbability);
@@ -129,17 +152,30 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime2);
 			sunset.append(" pm");
 
+			var phase = $("#day2Phase");
+			phase.append(response.DailyForecasts[1].Day.LongPhrase)
+
+			var Suntime = $("#day2SunTime")
+			Suntime.append(response.DailyForecasts[1].HoursOfSun)
 
 			// day3
-			var n = new Date().getDay() + 3;
+			var n = new Date().getDay() + 2;
 			if (n < 7){
 				$("#day3").text(d[n]);
 				}else{
 					$("#day3").text(d[n - 7]);
 				};
+
+				// Icon for card
+			var weatherIconContainer3 = $('#weather-icon3');
+			var iconNumber = "0" + response.DailyForecasts[2].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer3.attr('src', imageURL + iconNumber + '-s.png');
+
+
 			var temp = $("#day3temp");
-			temp.text(response.DailyForecasts[2].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[2].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[2].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[2].Temperature.Maximum.Value);
 
 			var rain = $("#day3Rain");
 			rain.append(response.DailyForecasts[2].Day.PrecipitationProbability);
@@ -161,17 +197,31 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime3);
 			sunset.append(" pm");
 
+			var phase = $("#day3Phase");
+			phase.append(response.DailyForecasts[2].Day.LongPhrase)
+
+			var Suntime = $("#day3SunTime")
+			Suntime.append(response.DailyForecasts[2].HoursOfSun)
+
 
 			// day 4
-			var n = new Date().getDay() + 4;
+			var n = new Date().getDay() + 3;
 			if (n < 7){
 				$("#day4").text(d[n]);
 				}else{
 					$("#day4").text(d[n - 7]);
 				};
+
+			// Icon for card
+			var weatherIconContainer4 = $('#weather-icon4');
+			var iconNumber = "0" + response.DailyForecasts[3].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer4.attr('src', imageURL + iconNumber + '-s.png');
+
+
 			var temp = $("#day4temp");
-			temp.text(response.DailyForecasts[3].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[3].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[3].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[3].Temperature.Maximum.Value);
 
 			var rain = $("#day4Rain");
 			rain.append(response.DailyForecasts[3].Day.PrecipitationProbability);
@@ -193,17 +243,29 @@ $("#find-zip").on("click", function (event) {
 			sunset.append(formattedSunsetTime4);
 			sunset.append(" pm");
 
+			var phase = $("#day4Phase");
+			phase.append(response.DailyForecasts[3].Day.LongPhrase)
 
+			var Suntime = $("#day4SunTime")
+			Suntime.append(response.DailyForecasts[3].HoursOfSun)
 			// day 5
-			var n = new Date().getDay() + 5;
+			var n = new Date().getDay() + 4;
 			if (n < 7){
 				$("#day5").text(d[n]);
 				}else{
 					$("#day5").text(d[n - 7]);
 				};
+
+
+			// Icon for card
+			var weatherIconContainer5 = $('#weather-icon5');
+			var iconNumber = "0" + response.DailyForecasts[4].Day.Icon
+			var imageURL = "assets/images/accuWeatherIcons/"
+			weatherIconContainer5.attr('src', imageURL + iconNumber + '-s.png');
+
 			var temp = $("#day5temp");
-			temp.text(response.DailyForecasts[4].Temperature.Maximum.Value + " - ");
-			temp.append(response.DailyForecasts[4].Temperature.Minimum.Value);
+			temp.text(response.DailyForecasts[4].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[4].Temperature.Maximum.Value);
 
 			var rain = $("#day5Rain");
 			rain.append(response.DailyForecasts[4].Day.PrecipitationProbability);
@@ -224,7 +286,16 @@ $("#find-zip").on("click", function (event) {
 			const formattedSunsetTime5 = moment(unformattedSunsetTime5).format("h:mm");
 			sunset.append(formattedSunsetTime5);
 			sunset.append(" pm");
+
+			var phase = $("#day5Phase");
+			phase.append(response.DailyForecasts[4].Day.LongPhrase)
+
+			var Suntime = $("#day5SunTime")
+			Suntime.append(response.DailyForecasts[4].HoursOfSun)
 			// // -----------------------------------------------------------------------
+			// left button....how to hide?
+			var userZip= $("#zip2")
+			userZip.append(zip)
 		})
 	});
 	hideEntryShowForm();
@@ -239,4 +310,8 @@ function hideEntryShowForm() {
 function showEntryHideForm() {
 	$(".entry-container").show();
 	$(".card-container").hide();
+}
+
+function showAdditonalDayInfo() {
+	// Onclick of forcast card, display additional day weather info in #additional-day-data
 }
