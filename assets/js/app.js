@@ -51,7 +51,7 @@ $("#find-zip").on("click", function (event) {
 			var d = ["Sunday","Monday", "Tuesday", "Wednesday", 
 			"Thursday", "Friday", "Saturday"];
 			// day1
-			var n = new Date().getDay() + 1;
+			var n = new Date().getDay();
 			if (n < 7){
 			$("#day1").text(d[n]);
 			}else{
@@ -83,7 +83,7 @@ $("#find-zip").on("click", function (event) {
 
 
 			// day 2
-			var n = new Date().getDay() + 2;
+			var n = new Date().getDay() + 1;
 			if (n < 7){
 				$("#day2").text(d[n]);
 				}else{
@@ -115,7 +115,7 @@ $("#find-zip").on("click", function (event) {
 
 
 			// day3
-			var n = new Date().getDay() + 3;
+			var n = new Date().getDay() + 2;
 			if (n < 7){
 				$("#day3").text(d[n]);
 				}else{
@@ -147,7 +147,7 @@ $("#find-zip").on("click", function (event) {
 
 
 			// day 4
-			var n = new Date().getDay() + 4;
+			var n = new Date().getDay() + 3;
 			if (n < 7){
 				$("#day4").text(d[n]);
 				}else{
@@ -179,7 +179,7 @@ $("#find-zip").on("click", function (event) {
 
 
 			// day 5
-			var n = new Date().getDay() + 5;
+			var n = new Date().getDay() + 4;
 			if (n < 7){
 				$("#day5").text(d[n]);
 				}else{
