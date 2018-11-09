@@ -11,3 +11,8 @@
 .forecast-card {
 	width: 160px;
 }
+
+.weather-icon {
+	height: 100px;
+	margin-top: 20px;
+}
