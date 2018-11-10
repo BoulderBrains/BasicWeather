@@ -295,7 +295,7 @@ $("#find-zip").on("click", function (event) {
 			// // -----------------------------------------------------------------------
 			// left button....how to hide?
 			var userZip= $("#zip2");
-			userZip.text("zipcode" + zip);
+			userZip.append(zip);
 		})
 	});
 	hideEntryShowForm();
@@ -304,11 +304,13 @@ $("#find-zip").on("click", function (event) {
 
 function hideEntryShowForm() {
 	$(".entry-container").hide();
+	$("#zip-display-return").show();
 	$(".card-container").show();
 }
 
 function showEntryHideForm() {
 	$(".entry-container").show();
+	$("#zip-display-return").hide();
 	$(".card-container").hide();
 }
 
