@@ -1,6 +1,15 @@
 # BasicWeather
 Basic weather app that calls out to a weather API and returns conditions based on zipcode
 
+#### Next steps:
+- Finish folding in validation that checks the user's zipcode and fires an alert or text to user when they attempt to enter "." or "-" in the zipcode search field
+
+- Dry out the .js file. Right now there is a lot of repetitive code, break that down and generate elements dynamically, to make this code hundreds of lines fewer
+
+- Pull in font awesome and choose some non-standard fonts to enhance display
+
+- Build out additional day information card more, pull in forecast image, day, current time. Display all of that in a more visually pleasing way. 
+
 ## Project requirements
 * With your group, answer each of the following questions:
   1. Who is your target audience?
