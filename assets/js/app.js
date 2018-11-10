@@ -75,8 +75,8 @@ $("#find-zip").on("click", function (event) {
 			
 			// Temp.
 			var temp = $("#day1temp");
-			temp.text(response.DailyForecasts[0].Temperature.Minimum.Value + " - ");
-			temp.append(response.DailyForecasts[0].Temperature.Maximum.Value);
+			temp.append(response.DailyForecasts[0].Temperature.Minimum.Value + " - ");
+			temp.append(response.DailyForecasts[0].Temperature.Maximum.Value + "&#8457;");
 
 			// Chance of precipitation
 			var rain = $("#day1Rain");
@@ -131,7 +131,7 @@ $("#find-zip").on("click", function (event) {
 			// Temp.
 			var temp = $("#day2temp");
 			temp.text(response.DailyForecasts[1].Temperature.Minimum.Value + " - ");
-			temp.append(response.DailyForecasts[1].Temperature.Maximum.Value);
+			temp.append(response.DailyForecasts[1].Temperature.Maximum.Value + "&#8457;");
 
 			// Chance of precipitation
 			var rain = $("#day2Rain");
@@ -186,7 +186,7 @@ $("#find-zip").on("click", function (event) {
 			// Temp.
 			var temp = $("#day3temp");
 			temp.text(response.DailyForecasts[2].Temperature.Minimum.Value + " - ");
-			temp.append(response.DailyForecasts[2].Temperature.Maximum.Value);
+			temp.append(response.DailyForecasts[2].Temperature.Maximum.Value + "&#8457;");
 
 			// Chance of precipitation 
 			var rain = $("#day3Rain");
@@ -241,7 +241,7 @@ $("#find-zip").on("click", function (event) {
 			// Temp.
 			var temp = $("#day4temp");
 			temp.text(response.DailyForecasts[3].Temperature.Minimum.Value + " - ");
-			temp.append(response.DailyForecasts[3].Temperature.Maximum.Value);
+			temp.append(response.DailyForecasts[3].Temperature.Maximum.Value + "&#8457;");
 
 			// Chance of precipitation 
 			var rain = $("#day4Rain");
@@ -296,7 +296,7 @@ $("#find-zip").on("click", function (event) {
 			// Temp.
 			var temp = $("#day5temp");
 			temp.text(response.DailyForecasts[4].Temperature.Minimum.Value + " - ");
-			temp.append(response.DailyForecasts[4].Temperature.Maximum.Value);
+			temp.append(response.DailyForecasts[4].Temperature.Maximum.Value + "&#8457;");
 
 			// Chance of precipitation
 			var rain = $("#day5Rain");

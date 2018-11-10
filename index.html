@@ -35,10 +35,10 @@
 	<div class="entry-container container">
 		<div class="text-center">
 			<span><h1 id="today">Today</h1></span>
-			<h1><marquee id="time-display" behavior="scroll" bgcolor="white" loop="-1" width="30%"><i><font color="black">Time : </font></i>
+			<h1><marquee id="time-display" behavior="scroll" bgcolor="white" loop="-1" width="30%"><i><font color="black">Time: </font></i>
 			</marquee></h1>
 			<h1><marquee id="date" behavior="scroll" bgcolor="white" loop="-1" width="30%">
-					<i><font color="black">Date : </font></i>
+					<i><font color="black">Date: </font></i>
 				  </marquee></h1>
 
 			<!-- This form will be where users input data about the zips -->
@@ -59,14 +59,6 @@
 		</div>
 	</div>
 
-	<!-- <div id="zip-display-return">
-		<div class="left">
-			<h3 id="zip2"></h3>
-		</div>
-		This button will trigger our AJAX call
-		<input type="submit" class="btn btn-secondary btn-sm" value="Search Again" onclick="showEntryHideForm()">
-	</div> -->
-
 	<div class="page-wrap text-center card-container">
 		<div class="row">
 
@@ -76,8 +68,8 @@
 				<!-- <img class="card-img-top" src="assets/images/sun.png" alt="Card image cap"> -->
 				<div class="card-img-top"><img id="weather-icon1" class="weather-icon"></div>
 				<div class="card-body">
-					<h5 id="day1" class="card-title">Day of the week</h5>
-					<p class="card-text weather-text" id="day1temp">{{ HighTemp }} - {{ LowTemp }}</p>
+					<h4 id="day1" class="card-title">Day of the week</h4>
+					<h2 class="card-text weather-text" id="day1temp">{{ HighTemp }} - {{ LowTemp }}</h2>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-light sunrise-time1" id="day1Sunrise"><strong>Sunrise time: </strong></li>
@@ -89,8 +81,8 @@
 			<div class="card bg-dark forecast-card2">
 				<div class="card-img-top"><img id="weather-icon2" class="weather-icon"></div>
 				<div class="card-body">
-					<h5 id="day2" class="card-title">Day of the week</h5>
-					<p class="card-text weather-text" id="day2temp">{{ HighTemp }} - {{ LowTemp }}</p>
+					<h4 id="day2" class="card-title">Day of the week</h4>
+					<h2 class="card-text weather-text" id="day2temp">{{ HighTemp }} - {{ LowTemp }}</h2>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-dark sunrise-time2" id="day2Sunrise"><strong>Sunrise time: </strong></li>
@@ -103,8 +95,8 @@
 			<div class="card bg-dark forecast-card3">
 				<div class="card-img-top"><img id="weather-icon3" class="weather-icon"></div>
 				<div class="card-body">
-					<h5 id="day3" class="card-title">Day of the week</h5>
-					<p class="card-text weather-text" id="day3temp">{{ HighTemp }} - {{ LowTemp }}</p>
+					<h4 id="day3" class="card-title">Day of the week</h4>
+					<h2 class="card-text weather-text" id="day3temp">{{ HighTemp }} - {{ LowTemp }}</h2>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-dark sunrise-time3" id="day3Sunrise"><strong>Sunrise time: </strong></li>
@@ -117,8 +109,8 @@
 			<div class="card bg-dark forecast-card4">
 				<div class="card-img-top"><img id="weather-icon4" class="weather-icon"></div>
 				<div class="card-body">
-					<h5 id="day4" class="card-title">Day of the week</h5>
-					<p class="card-text weather-text" id="day4temp">{{ HighTemp }} - {{ LowTemp }}</p>
+					<h4 id="day4" class="card-title">Day of the week</h4>
+					<h2 class="card-text weather-text" id="day4temp">{{ HighTemp }} - {{ LowTemp }}</h2>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-dark sunrise-time4" id="day4Sunrise"><strong>Sunrise time: </strong></li>
@@ -130,8 +122,8 @@
 			<div class="card bg-dark forecast-card5">
 				<div class="card-img-top"><img id="weather-icon5" class="weather-icon"></div>
 				<div class="card-body">
-					<h5 id="day5" class="card-title">Day of the week</h5>
-					<p class="card-text weather-text" id="day5temp">{{ HighTemp }} - {{ LowTemp }}</p>
+					<h4 id="day5" class="card-title">Day of the week</h4>
+					<h2 class="card-text weather-text" id="day5temp">{{ HighTemp }} - {{ LowTemp }}</h2>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-dark sunrise-time5" id="day5Sunrise"><strong>Sunrise time: </strong></li>
@@ -182,7 +174,7 @@
 		<!-- Bootstrap footer -->
 		<footer class="footer">
 			<div class="container">
-				<span>Forecast for: </span><h3 id="zip2" class="forecast-zip"></h3>
+				<span>Forecast for: </span><h4 id="zip2" class="forecast-zip"></h4>
 				<!-- This button will trigger our AJAX call -->
 				<input type="submit" class="btn btn-danger btn-sm" value="Back" onclick="showEntryHideForm()">
 			</div>
