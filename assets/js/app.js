@@ -1,8 +1,8 @@
 // This is pulling your personal API key out of the config.js file
 var myApiKey = apiKeys.MY_KEY;
-console.log(new Date())
-console.log(new Date().getTime())
-console.log(new moment().format("HH:mm"));
+// console.log(new Date())
+// console.log(new Date().getTime())
+// console.log(new moment().format("HH:mm"));
 var d = ["Sunday","Monday", "Tuesday", "Wednesday", 
 			"Thursday", "Friday", "Saturday"];
 			var n = new Date().getDay();
@@ -28,7 +28,7 @@ $("#find-zip").on("click", function (event) {
 		url: queryURL,
 		method: "GET"
 	}).then(function (response) {
-		// console.log(response[0].Key)
+		console.log(response[0].Key)
 			
 		// API url for Current Condition Card
 		var currentURL = "https://dataservice.accuweather.com/currentconditions/v1/" + response[0].Key + "?apikey=" + myApiKey + "&details=true";
@@ -37,7 +37,7 @@ $("#find-zip").on("click", function (event) {
 			url: currentURL,
 			method: "GET"
 		}).then(function (response) {
-			// console.log(response)
+			console.log(response)
 			$("#day1Visibility").append( + response[0].Visibility.Imperial.Value + " " + response[0].Visibility.Imperial.Unit);
 			$("#day1Pressure").append(  + response[0].Pressure.Imperial.Value + " " + response[0].Pressure.Imperial.Unit);
 		});
@@ -336,6 +336,14 @@ $("#find-zip").on("click", function (event) {
 		})
 	});
 	hideEntryShowForm();
+	
+	// On page load, show day 1 additional information
+	$(".day1AdditionalInfo").show();
+	// hide day 2 - 5 additional information
+	$(".day2AdditionalInfo").hide();
+	$(".day3AdditionalInfo").hide();
+	$(".day4AdditionalInfo").hide();
+	$(".day5AdditionalInfo").hide();
 });
 
 
@@ -351,15 +359,203 @@ function showEntryHideForm() {
 	$(".card-container").hide();
 }
 
-function showAdditonalDayInfo() {
-	// Onclick of forcast card, display additional day weather info in #additional-day-data
-}
+// Click interactions for the forecast cards
+$(".forecast-card1").on("click", function() {
+	// remove bg-dark classes 3 of them
+	if ($(".forecast-card1").hasClass("bg-dark")) {
+		// remove dark class on card 1 an add light backgrounds and selected class
+		$(".forecast-card1").removeClass("bg-dark");
+		$(".sunrise-time1").removeClass("bg-dark");
+		$(".sunset-time1").removeClass("bg-dark");
+		// add light class
+		$(".forecast-card1").addClass("bg-light");
+		$(".sunrise-time1").addClass("bg-light");
+		$(".sunset-time1").addClass("bg-light");
+		$(".forecast-card1").addClass("selected");
 
-// if card1 is selected {
-// 	show card1additionalInfo
-// 	hide other cards 
-// }
+		// show day1additional information
+		$(".day1AdditionalInfo").show();
+		// hide day 2 - 5 additional information
+		$(".day2AdditionalInfo").hide();
+		$(".day3AdditionalInfo").hide();
+		$(".day4AdditionalInfo").hide();
+		$(".day5AdditionalInfo").hide();
 
-// function showReleventAdditionalInfo() {
-// 	if ()
-// }
+		// Remove light classes from all other cards
+		$(".forecast-card2").addClass("bg-dark");
+		$(".sunrise-time2").addClass("bg-dark");
+		$(".sunset-time2").addClass("bg-dark");
+
+		$(".forecast-card3").addClass("bg-dark");
+		$(".sunrise-time3").addClass("bg-dark");
+		$(".sunset-time3").addClass("bg-dark");
+
+		$(".forecast-card4").addClass("bg-dark");
+		$(".sunrise-time4").addClass("bg-dark");
+		$(".sunset-time4").addClass("bg-dark");
+
+		$(".forecast-card5").addClass("bg-dark");
+		$(".sunrise-time5").addClass("bg-dark");
+		$(".sunset-time5").addClass("bg-dark");
+	}
+});
+
+$(".forecast-card2").on("click", function() {
+	// remove bg-dark classes 3 of them
+	if ($(".forecast-card2").hasClass("bg-dark")) {
+		// remove dark class on card 2 and add light backgrounds and selected class
+		$(".forecast-card2").removeClass("bg-dark");
+		$(".sunrise-time2").removeClass("bg-dark");
+		$(".sunset-time2").removeClass("bg-dark");
+
+		$(".forecast-card2").addClass("bg-light");
+		$(".sunrise-time2").addClass("bg-light");
+		$(".sunset-time2").addClass("bg-light");
+		$(".forecast-card2").addClass("selected");
+
+		// show day2additional information
+		$(".day2AdditionalInfo").show();
+		// hide day 1 & 3 - 5 additional information
+		$(".day1AdditionalInfo").hide();
+		$(".day3AdditionalInfo").hide();
+		$(".day4AdditionalInfo").hide();
+		$(".day5AdditionalInfo").hide();
+
+		// Remove light classes from all other cards
+		$(".forecast-card1").addClass("bg-dark");
+		$(".sunrise-time1").addClass("bg-dark");
+		$(".sunset-time1").addClass("bg-dark");
+
+		$(".forecast-card3").addClass("bg-dark");
+		$(".sunrise-time3").addClass("bg-dark");
+		$(".sunset-time3").addClass("bg-dark");
+
+		$(".forecast-card4").addClass("bg-dark");
+		$(".sunrise-time4").addClass("bg-dark");
+		$(".sunset-time4").addClass("bg-dark");
+
+		$(".forecast-card5").addClass("bg-dark");
+		$(".sunrise-time5").addClass("bg-dark");
+		$(".sunset-time5").addClass("bg-dark");
+	}
+});
+
+$(".forecast-card3").on("click", function() {
+	// remove bg-dark classes 3 of them
+	if ($(".forecast-card3").hasClass("bg-dark")) {
+		// remove dark class on card 3 an add light backgrounds and selected class
+		$(".forecast-card3").removeClass("bg-dark");
+		$(".sunrise-time3").removeClass("bg-dark");
+		$(".sunset-time3").removeClass("bg-dark");
+		// add light class
+		$(".forecast-card3").addClass("bg-light");
+		$(".sunrise-time3").addClass("bg-light");
+		$(".sunset-time3").addClass("bg-light");
+		$(".forecast-card3").addClass("selected");
+
+		// show day3additional information
+		$(".day3AdditionalInfo").show();
+		// hide day 1, 2, 4, 5 additional information
+		$(".day1AdditionalInfo").hide();
+		$(".day2AdditionalInfo").hide();
+		$(".day4AdditionalInfo").hide();
+		$(".day5AdditionalInfo").hide();
+
+		// Remove light classes from all other cards
+		$(".forecast-card1").addClass("bg-dark");
+		$(".sunrise-time1").addClass("bg-dark");
+		$(".sunset-time1").addClass("bg-dark");
+
+		$(".forecast-card2").addClass("bg-dark");
+		$(".sunrise-time2").addClass("bg-dark");
+		$(".sunset-time2").addClass("bg-dark");
+
+		$(".forecast-card4").addClass("bg-dark");
+		$(".sunrise-time4").addClass("bg-dark");
+		$(".sunset-time4").addClass("bg-dark");
+
+		$(".forecast-card5").addClass("bg-dark");
+		$(".sunrise-time5").addClass("bg-dark");
+		$(".sunset-time5").addClass("bg-dark");
+	}
+});
+
+$(".forecast-card4").on("click", function() {
+	// remove bg-dark classes 3 of them
+	if ($(".forecast-card4").hasClass("bg-dark")) {
+		// remove dark class on card 4 an add light backgrounds and selected class
+		$(".forecast-card4").removeClass("bg-dark");
+		$(".sunrise-time4").removeClass("bg-dark");
+		$(".sunset-time4").removeClass("bg-dark");
+		// add light class
+		$(".forecast-card4").addClass("bg-light");
+		$(".sunrise-time4").addClass("bg-light");
+		$(".sunset-time4").addClass("bg-light");
+		$(".forecast-card4").addClass("selected");
+
+		// show day4additional information
+		$(".day4AdditionalInfo").show();
+		// hide day 1, 2, 3, 5 additional information
+		$(".day1AdditionalInfo").hide();
+		$(".day2AdditionalInfo").hide();
+		$(".day3AdditionalInfo").hide();
+		$(".day5AdditionalInfo").hide();
+
+		// Remove light classes from all other cards
+		$(".forecast-card1").addClass("bg-dark");
+		$(".sunrise-time1").addClass("bg-dark");
+		$(".sunset-time1").addClass("bg-dark");
+
+		$(".forecast-card2").addClass("bg-dark");
+		$(".sunrise-time2").addClass("bg-dark");
+		$(".sunset-time2").addClass("bg-dark");
+
+		$(".forecast-card3").addClass("bg-dark");
+		$(".sunrise-time3").addClass("bg-dark");
+		$(".sunset-time3").addClass("bg-dark");
+
+		$(".forecast-card5").addClass("bg-dark");
+		$(".sunrise-time5").addClass("bg-dark");
+		$(".sunset-time5").addClass("bg-dark");
+	}
+});
+
+$(".forecast-card5").on("click", function() {
+	// remove bg-dark classes 3 of them
+	if ($(".forecast-card5").hasClass("bg-dark")) {
+		// remove dark class on card 5 an add light backgrounds and selected class
+		$(".forecast-card5").removeClass("bg-dark");
+		$(".sunrise-time5").removeClass("bg-dark");
+		$(".sunset-time5").removeClass("bg-dark");
+		// add light class
+		$(".forecast-card5").addClass("bg-light");
+		$(".sunrise-time5").addClass("bg-light");
+		$(".sunset-time5").addClass("bg-light");
+		$(".forecast-card5").addClass("selected");
+
+		// show day5additional information
+		$(".day5AdditionalInfo").show();
+		// hide day 1, 2, 3, 4 additional information
+		$(".day1AdditionalInfo").hide();
+		$(".day2AdditionalInfo").hide();
+		$(".day3AdditionalInfo").hide();
+		$(".day4AdditionalInfo").hide();
+
+		// Remove light classes from all other cards
+		$(".forecast-card1").addClass("bg-dark");
+		$(".sunrise-time1").addClass("bg-dark");
+		$(".sunset-time1").addClass("bg-dark");
+
+		$(".forecast-card2").addClass("bg-dark");
+		$(".sunrise-time2").addClass("bg-dark");
+		$(".sunset-time2").addClass("bg-dark");
+
+		$(".forecast-card3").addClass("bg-dark");
+		$(".sunrise-time3").addClass("bg-dark");
+		$(".sunset-time3").addClass("bg-dark");
+
+		$(".forecast-card4").addClass("bg-dark");
+		$(".sunrise-time4").addClass("bg-dark");
+		$(".sunset-time4").addClass("bg-dark");
+	}
+});
