@@ -293,7 +293,8 @@ $("#find-zip").on("click", function (event) {
 			var Suntime = $("#day5SunTime")
 			Suntime.append(response.DailyForecasts[4].HoursOfSun);
 			// // -----------------------------------------------------------------------
-			// left button....how to hide?
+			
+			// Adding the current zipcode for the weather currently being display
 			var userZip= $("#zip2");
 			userZip.append(zip);
 		})
