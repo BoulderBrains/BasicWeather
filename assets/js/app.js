@@ -560,3 +560,22 @@ $(".forecast-card5").on("click", function() {
 		$(".sunset-time4").addClass("bg-dark");
 	}
 });
+
+// Didn't get this validation working quite right yet
+// I want to check for - and . characters then trigger an
+// alert letting the user know they can only enter 1 - 0 on the keyboard
+
+// $("#zip-input").keyup(function(){
+// 	console.log("keyup triggered");
+// 	var text = $("#zip-input").val();
+// 	console.log(text);
+
+// 	if (this.text === ".") {
+// 		alert('You can only enter numerical characters.');
+// 		return false;
+// 	}
+// 	else if (this.text === "-") {
+// 		alert('No spaces allowed');
+// 		return false;
+// 	}
+// });

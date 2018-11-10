@@ -1,9 +1,7 @@
 # BasicWeather
 Basic weather app that calls out to a weather API and returns conditions based on zipcode
 
-# Group Do: Designing your MVP
-
-## Instructions
+## Project requirements
 * With your group, answer each of the following questions:
   1. Who is your target audience?
 	- Person interesting in knowing the weather.
@@ -17,9 +15,8 @@ Basic weather app that calls out to a weather API and returns conditions based o
   4. Identify and prioritize essential user stories (limit this to 3 or fewer)?
 	- 1:  As a user I should be able to open this project and know what time it is. Display time on project load.
 	- 2: As a user I should be able to enter my zipcode and learn the current day: temp, chance of rain, wind speed, sunset & sunrise times.
-	- 3: As a user I should be able to see the forcast for the next 7 days (each day displayed as an item, with highs/lows).
-	- 4: As a user I should be able to click on advanced days forcasts and learn Temp, Chance of rain, wind speed, sunrise & sunset.
-	- 5: As a user I should be able to close the browser and reopen it and see the data I entered last time I came to this form.
+	- 3: As a user I should be able to see the forecast for the next 5 days (Include current day. Each day displayed as an item, with highs/lows).
+	- 4: As a user I should be able to click on advanced days forcasts and learn Temp, Chance of rain, wind speed, sunrise & sunset predictions.
 
 Requirements: 
 - Must use at least 2 APIs
