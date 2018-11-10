@@ -1,6 +1,8 @@
 # BasicWeather
 Basic weather app that calls out to a weather API and returns conditions based on zipcode
 
+## Github pages URL: https://boulderbrains.github.io/BasicWeather/
+
 #### Next steps:
 - Finish folding in validation that checks the user's zipcode and fires an alert or text to user when they attempt to enter "." or "-" in the zipcode search field
 
@@ -9,6 +11,9 @@ Basic weather app that calls out to a weather API and returns conditions based o
 - Pull in font awesome and choose some non-standard fonts to enhance display
 
 - Build out additional day information card more, pull in forecast image, day, current time. Display all of that in a more visually pleasing way. 
+
+
+
 
 ## Project requirements
 * With your group, answer each of the following questions:
