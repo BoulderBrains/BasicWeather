@@ -35,9 +35,17 @@
 	<div class="entry-container container">
 		<div class="text-center">
 			<span><h1 id="today" >Today</h1></span>
-			<h1><marquee behavior="scroll" bgcolor="white" loop="-1" width="30%"><i><font color="black" id="time-display">Time : </font></i><br><i><font color="black" id="date">Date : </font></i>
-			</marquee></h1>
-			<h2>CHECK THE WEATHER</h2>
+			<h1>
+				<marquee behavior="scroll" bgcolor="white" loop="-1" width="30%">
+					<i>
+						<font color="black" id="time-display">Time : </font>
+					</i>
+					<br>
+					<i>
+						<font color="black" id="date">Date : </font>
+					</i>
+				</marquee>
+			</h1>
 
 			<!-- This form will be where users input data about the zips -->
 			<form id="zip-form">
@@ -134,37 +142,91 @@
 		<!-- this is info for the additional boxes, prob should for loop -->
 		<div id="additional-day-data">
 			<div class="additional-info-card-wrap col-sm-6">
+				
+				<!-- additional day 1 info -->
 				<div class="day1AdditionalInfo">
-					<li class="list-group-item chance-of-precipitation" id="day1Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed" id="day1Wind"><strong>Windspeed: </strong></li>
-					<li class="list-group-item dayLongPhase" id="day1Phase"><strong>Today will be: </strong></li>
-					<li class="list-group-item hoursOfSun" id="day1SunTime"><strong>Hours Of Sunshine: </strong></li>
-					<li class="list-group-item visability" id="day1Visibility"><strong>Visibility: </strong></li>
-					<li class="list-group-item pressure" id="day1Pressure"><strong>Pressure: </strong></li>
+					<li class="list-group-item chance-of-precipitation" id="day1Rain">
+						<h4><strong>Chance of rain: </strong></h4>
+					</li>
+					<li class="list-group-item windspeed" id="day1Wind">
+						<h4><strong>Windspeed: </strong></h4>
+					</li>
+					<li class="list-group-item dayLongPhase" id="day1Phase">
+						<h4><strong>Today will be: </strong></h4>
+					</li>
+					<li class="list-group-item hoursOfSun" id="day1SunTime">
+						<h4><strong>Hours Of Sunshine: </strong></h4>
+					</li>
+					<li class="list-group-item visability" id="day1Visibility">
+						<h4><strong>Visibility: </strong></h4>
+					</li>
+					<li class="list-group-item pressure" id="day1Pressure">
+						<h4><strong>Pressure: </strong></h4>
+					</li>
 				</div>
+
+				<!-- additional day 2 info -->
 				<div class="day2AdditionalInfo">
-					<li class="list-group-item chance-of-precipitation" id="day2Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed" id="day2Wind"><strong>Windspeed: </strong></li>
-					<li class="list-group-item dayLongPhase" id="day2Phase"><strong>Today will be: </strong></li>
-					<li class="list-group-item hoursOfSun" id="day2SunTime"><strong>Hours Of Sunshine: </strong></li>
+					<li class="list-group-item chance-of-precipitation" id="day2Rain">
+						<h4><strong>Chance of rain: </strong></h4>
+					</li>
+					<li class="list-group-item windspeed" id="day2Wind">
+						<h4><strong>Windspeed: </strong></h4>
+					</li>
+					<li class="list-group-item dayLongPhase" id="day2Phase">
+						<h4><strong>Today will be: </strong></h4>
+					</li>
+					<li class="list-group-item hoursOfSun" id="day2SunTime">
+						<h4><strong>Hours Of Sunshine: </strong></h4>
+					</li>
 				</div>
+
+				<!-- additional day 3 info -->
 				<div class="day3AdditionalInfo">
-					<li class="list-group-item chance-of-precipitation" id="day3Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed" id="day3Wind"><strong>Windspeed: </strong></li>
-					<li class="list-group-item dayLongPhase" id="day3Phase"><strong>Today will be: </strong></li>
-					<li class="list-group-item hoursOfSun" id="day3SunTime"><strong>Hours Of Sunshine: </strong></li>
+					<li class="list-group-item chance-of-precipitation" id="day3Rain">
+						<h4><strong>Chance of rain: </strong></h4>
+					</li>
+					<li class="list-group-item windspeed" id="day3Wind">
+						<h4><strong>Windspeed: </strong></h4>
+					</li>
+					<li class="list-group-item dayLongPhase" id="day3Phase">
+						<h4><strong>Today will be: </strong></h4>
+					</li>
+					<li class="list-group-item hoursOfSun" id="day3SunTime">
+						<h4><strong>Hours Of Sunshine: </strong></h4>
+					</li>
 				</div>
+				
+				<!-- additional day 4 info -->
 				<div class="day4AdditionalInfo">
-					<li class="list-group-item chance-of-precipitation" id="day4Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed" id="day4Wind"><strong>Windspeed: </strong></li>
-					<li class="list-group-item dayLongPhase" id="day4Phase"><strong>Today will be: </strong></li>
-					<li class="list-group-item hoursOfSun" id="day4SunTime"><strong>Hours Of Sunshine: </strong></li>
+					<li class="list-group-item chance-of-precipitation" id="day4Rain">
+						<h4><strong>Chance of rain: </strong></h4>
+					</li>
+					<li class="list-group-item windspeed" id="day4Wind">
+						<h4><strong>Windspeed: </strong></h4>
+					</li>
+					<li class="list-group-item dayLongPhase" id="day4Phase">
+						<h4><strong>Today will be: </strong></h4>
+					</li>
+					<li class="list-group-item hoursOfSun" id="day4SunTime">
+						<h4><strong>Hours Of Sunshine: </strong></h4>
+					</li>
 				</div>
+
+				<!-- additional day 5 info -->
 				<div class="day5AdditionalInfo">
-					<li class="list-group-item chance-of-precipitation" id="day5Rain"><strong>Chance of rain: </strong></li>
-					<li class="list-group-item windspeed" id="day5Wind"><strong>Windspeed: </strong></li>
-					<li class="list-group-item dayLongPhase" id="day5Phase"><strong>Today will be: </strong></li>
-					<li class="list-group-item hoursOfSun" id="day5SunTime"><strong>Hours Of Sunshine: </strong></li>
+					<li class="list-group-item chance-of-precipitation" id="day5Rain">
+						<h4><strong>Chance of rain: </strong></h4>
+					</li>
+					<li class="list-group-item windspeed" id="day5Wind">
+						<h4><strong>Windspeed: </strong></h4>
+					</li>
+					<li class="list-group-item dayLongPhase" id="day5Phase">
+						<h4><strong>Today will be: </strong></h4>
+					</li>
+					<li class="list-group-item hoursOfSun" id="day5SunTime">
+						<h4><strong>Hours Of Sunshine: </strong></h4>
+					</li>
 				</div>
 			</div>
 		</div>
