@@ -8,6 +8,15 @@
 	width: 288px;
 }
 
+.card.bg-light {
+	box-shadow: 4px 8px 1px;
+}
+
+.form-group,
+.zip-inputs-wrap {
+	margin: 0 auto;
+}
+
 .forecast-card {
 	width: 160px;
 }
