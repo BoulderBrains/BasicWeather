@@ -12,6 +12,9 @@ Basic weather app that calls out to a weather API and returns conditions based o
 
 - Build out additional day information card more, pull in forecast image, day, current time. Display all of that in a more visually pleasing way. 
 
+- Make background image dynamic, if day, show daytime image, night, show nighttime image.
+
+- Fix up .text & .appends throughout cards
 
 
 
