@@ -59,20 +59,20 @@
 		</div>
 	</div>
 
-	<div id="zip-display-return">
+	<!-- <div id="zip-display-return">
 		<div class="left">
 			<h3 id="zip2"></h3>
 		</div>
-		<!-- This button will trigger our AJAX call -->
+		This button will trigger our AJAX call
 		<input type="submit" class="btn btn-secondary btn-sm" value="Search Again" onclick="showEntryHideForm()">
-	</div>
+	</div> -->
 
 	<div class="page-wrap text-center card-container">
 		<div class="row">
 
 			<!-- Forecast weather cards -->
 			<!-- Day1 -->
-			<div class="card bg-light forecast-card forecast-card1 selected">
+			<div class="card bg-light forecast-card1 selected">
 				<!-- <img class="card-img-top" src="assets/images/sun.png" alt="Card image cap"> -->
 				<div class="card-img-top"><img id="weather-icon1" class="weather-icon"></div>
 				<div class="card-body">
@@ -86,7 +86,7 @@
 			</div>
 
 			<!-- Day2 -->
-			<div class="card bg-dark forecast-card forecast-card2">
+			<div class="card bg-dark forecast-card2">
 				<div class="card-img-top"><img id="weather-icon2" class="weather-icon"></div>
 				<div class="card-body">
 					<h5 id="day2" class="card-title">Day of the week</h5>
@@ -100,7 +100,7 @@
 			</div>
 
 			<!-- Day3 -->
-			<div class="card bg-dark forecast-card forecast-card3">
+			<div class="card bg-dark forecast-card3">
 				<div class="card-img-top"><img id="weather-icon3" class="weather-icon"></div>
 				<div class="card-body">
 					<h5 id="day3" class="card-title">Day of the week</h5>
@@ -114,7 +114,7 @@
 			</div>
 
 			<!-- Day 4 -->
-			<div class="card bg-dark forecast-card forecast-card4">
+			<div class="card bg-dark forecast-card4">
 				<div class="card-img-top"><img id="weather-icon4" class="weather-icon"></div>
 				<div class="card-body">
 					<h5 id="day4" class="card-title">Day of the week</h5>
@@ -127,7 +127,7 @@
 			</div>
 
 			<!-- Day5 -->
-			<div class="card bg-dark forecast-card forecast-card5">
+			<div class="card bg-dark forecast-card5">
 				<div class="card-img-top"><img id="weather-icon5" class="weather-icon"></div>
 				<div class="card-body">
 					<h5 id="day5" class="card-title">Day of the week</h5>
@@ -143,7 +143,7 @@
 
 		<!-- this is info for the additional boxes, prob should for loop -->
 		<div id="additional-day-data">
-			<div class="data-card-body col-sm-6">
+			<div class="additional-info-card-wrap col-sm-6">
 				<div class="day1AdditionalInfo">
 					<li class="list-group-item chance-of-precipitation" id="day1Rain"><strong>Chance of rain: </strong></li>
 					<li class="list-group-item windspeed" id="day1Wind"><strong>Windspeed: </strong></li>
@@ -178,6 +178,15 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- Bootstrap footer -->
+		<footer class="footer">
+			<div class="container">
+				<span>Forecast for: </span><h3 id="zip2" class="forecast-zip"></h3>
+				<!-- This button will trigger our AJAX call -->
+				<input type="submit" class="btn btn-danger btn-sm" value="Back" onclick="showEntryHideForm()">
+			</div>
+		</footer>
 
 
 		<!-- Config JS file include -->
