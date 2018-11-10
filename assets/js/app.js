@@ -7,7 +7,8 @@ var d = ["Sunday","Monday", "Tuesday", "Wednesday",
 			"Thursday", "Friday", "Saturday"];
 			var n = new Date().getDay();
 			$("#today").text(d[n]);
-			$("#time-display").append(new moment().format("HH:mm"));
+			$("#time-display").append(new moment().format("HH:mm"))
+			
 			var m = new Date().getMonth() + 1;
 			var t = new Date().getDate();
 			var y = new Date().getFullYear();

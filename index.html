@@ -34,12 +34,9 @@
 <body onload="showEntryHideForm()" background="assets/images/back.png">
 	<div class="entry-container container">
 		<div class="text-center">
-			<span><h1 id="today">Today</h1></span>
-			<h1><marquee id="time-display" behavior="scroll" bgcolor="white" loop="-1" width="30%"><i><font color="black">Time : </font></i>
+			<span><h1 id="today" >Today</h1></span>
+			<h1><marquee behavior="scroll" bgcolor="white" loop="-1" width="30%"><i><font color="black" id="time-display">Time : </font></i><br><i><font color="black" id="date">Date : </font></i>
 			</marquee></h1>
-			<h1><marquee id="date" behavior="scroll" bgcolor="white" loop="-1" width="30%">
-					<i><font color="black">Date : </font></i>
-				  </marquee></h1>
 			<h2>CHECK THE WEATHER</h2>
 
 			<!-- This form will be where users input data about the zips -->
@@ -63,7 +60,7 @@
 		</div>
 			<!-- This button will trigger our AJAX call -->
 			<button onclick="showEntryHideForm()">
-				<input id="find-zip2" type="submit2" class="btn btn-primary2" value="Search Again">
+				<input id="find-zip2" type="submit2" class="btn btn-primary2" placeholder="Search Again">
 		</button>
 	</div>
 
