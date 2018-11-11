@@ -36,7 +36,7 @@
 		<div class="text-center">
 			<span><h1 id="today" >Today</h1></span>
 			<h1>
-				<marquee behavior="scroll" bgcolor="white" loop="-1" width="30%">
+				<marquee behavior="scroll" bgcolor="white" loop="3" width="30%">
 					<i>
 						<font color="black" id="time-display">Time : </font>
 					</i>
@@ -236,7 +236,7 @@
 			<div class="container">
 				<span>Forecast for: </span><h4 id="zip2" class="forecast-zip"></h4>
 				<!-- This button will trigger our AJAX call -->
-				<input type="submit" class="btn btn-danger btn-sm" value="Back" onclick="showEntryHideForm()">
+				<input type="submit" class="btn btn-danger btn-sm" value="Back" onclick="location.reload()">
 			</div>
 		</footer>
 
